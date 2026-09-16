@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .font-mono { font-family: 'Space Mono', 'JetBrains Mono', monospace; }
+      .font-sans { font-family: 'Inter', -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F2EA" />
+
+  <!-- Retro Grid Dots -->
+  <pattern id="dot-grid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.5" fill="#D8D2C2" />
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dot-grid)" />
+
+  <!-- Outer Hard Border -->
+  <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#050505" stroke-width="6" />
+
+  <!-- Top Banner Bar -->
+  <rect x="24" y="24" width="1152" height="64" fill="#050505" />
+  <text x="56" y="66" class="font-mono" font-size="24" font-weight="bold" fill="#B8FF00">SWIPEPIX // v1.0 PRODUCTION RELEASE</text>
+  <circle cx="1100" cy="56" r="10" fill="#B8FF00" />
+  <circle cx="1132" cy="56" r="10" fill="#FF4FD8" />
+
+  <!-- Left Content Area -->
+  <g transform="translate(72, 160)">
+    <!-- Brand Pill -->
+    <rect x="0" y="0" width="220" height="48" rx="6" fill="#8B5CF6" stroke="#050505" stroke-width="4" />
+    <text x="24" y="32" class="font-mono" font-size="20" font-weight="bold" fill="#FFFFFF">OFFLINE UTILITY</text>
+
+    <!-- Headline -->
+    <text x="0" y="110" class="font-mono" font-size="54" font-weight="bold" fill="#050505" letter-spacing="-1">CLEAN YOUR GALLERY.</text>
+    <text x="0" y="176" class="font-mono" font-size="54" font-weight="bold" fill="#2F6BFF" letter-spacing="-1">ONE SWIPE AT A TIME.</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="235" class="font-sans" font-size="22" fill="#333333" font-weight="500">Triage thousands of photos and videos with intuitive gestures.</text>
+    <text x="0" y="270" class="font-sans" font-size="22" fill="#333333" font-weight="500">100% offline • Zero cloud • Native Android system trash safety.</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(0, 315)">
+      <!-- Badge 1 -->
+      <rect x="0" y="0" width="160" height="42" fill="#B8FF00" stroke="#050505" stroke-width="3" />
+      <text x="20" y="27" class="font-mono" font-size="16" font-weight="bold" fill="#050505">100% OFFLINE</text>
+      
+      <!-- Badge 2 -->
+      <rect x="180" y="0" width="140" height="42" fill="#FFFFFF" stroke="#050505" stroke-width="3" />
+      <text x="200" y="27" class="font-mono" font-size="16" font-weight="bold" fill="#050505">NO CLOUD</text>
+
+      <!-- Badge 3 -->
+      <rect x="340" y="0" width="160" height="42" fill="#FF4FD8" stroke="#050505" stroke-width="3" />
+      <text x="358" y="27" class="font-mono" font-size="16" font-weight="bold" fill="#050505">NO TRACKERS</text>
+    </g>
+  </g>
+
+  <!-- Right Visual: Stylized Phone Card Deck -->
+  <g transform="translate(800, 140)">
+    <!-- Shadow -->
+    <rect x="28" y="28" width="310" height="410" rx="16" fill="#050505" />
+    <!-- Phone Body -->
+    <rect x="16" y="16" width="310" height="410" rx="16" fill="#FFFFFF" stroke="#050505" stroke-width="5" />
+    
+    <!-- Camera Island -->
+    <rect x="100" y="28" width="140" height="18" rx="9" fill="#050505" />
+    
+    <!-- Photo Card inside Phone -->
+    <rect x="36" y="66" width="270" height="290" rx="8" fill="#EBF1FF" stroke="#050505" stroke-width="4" />
+    
+    <!-- Photo Graphic -->
+    <circle cx="100" cy="140" r="30" fill="#FF4FD8" stroke="#050505" stroke-width="3" />
+    <path d="M56 280 L130 190 L190 250 L230 200 L286 280 Z" fill="#2F6BFF" stroke="#050505" stroke-width="3" />
+
+    <!-- Direction Badges -->
+    <rect x="36" y="370" width="120" height="38" fill="#FF4FD8" stroke="#050505" stroke-width="3" />
+    <text x="50" y="395" class="font-mono" font-size="14" font-weight="bold" fill="#050505">← TRASH</text>
+
+    <rect x="186" y="370" width="120" height="38" fill="#B8FF00" stroke="#050505" stroke-width="3" />
+    <text x="210" y="395" class="font-mono" font-size="14" font-weight="bold" fill="#050505">KEEP →</text>
+  </g>
+</svg>

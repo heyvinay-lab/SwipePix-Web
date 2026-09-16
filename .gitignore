@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production Build Outputs
+/dist
+/dist-ssr
+/build
+/out
+
+# TypeScript Build Cache
+*.tsbuildinfo
+.vite/
+
+# Environment & Secret Configurations
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.cert
+
+# Debug & Execution Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Editor & System Artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Mobile Isolation (Prevent accidental Android build artifacts)
+.gradle/
+local.properties
+keystore.properties
+*.jks
+*.keystore
+*.aab
+*.apk
+!public/downloads/*.apk
+
+# Temporary Directories & Scratch Files
+*.tmp
+*.temp
+/temp
+/tmp

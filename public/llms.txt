@@ -1,0 +1,46 @@
+# SwipePix
+
+> SwipePix is a 100% offline, privacy-first Android photo and video decluttering utility built by Vinay with Jetpack Compose and Modern Android Architecture. It empowers users to clean up thousands of photos and videos using fast Tinder-style swipe gestures, batch multi-select, and an integrated in-app video player—with zero ads, zero trackers, zero cloud dependencies, and zero network permission.
+
+## Quick Facts
+
+- **Developer**: Vinay ([Portfolio](https://portfolio.heyvinay.in/) | [GitHub](https://github.com/heyvinay))
+- **Official Website**: https://swipepix.heyvinay.in/
+- **GitHub Repository**: https://github.com/heyvinay-lab/SwipePix
+- **Full LLM Documentation**: https://swipepix.heyvinay.in/llms-full.txt
+- **Package Name**: `in.heyvinay.swipepix`
+- **Supported Android Versions**: Android 13 (API 33) to Android 15 (API 35)
+- **Verified Hardware**: Samsung Galaxy S24 Ultra (One UI 6.1 / Android 14)
+- **Licensing & Pricing**: 100% Free, No Ads, No Subscriptions, No In-App Purchases
+- **Internet Permission**: Strictly Absent (`android.permission.INTERNET` is omitted from the manifest)
+- **Release Verification**: RSA 4096-bit signed release, Google Play Protect clean scan (0 risks)
+
+## Core Capabilities
+
+- **Swipe-Based Card Triage**: Review photos and videos in a smooth card deck. Swipe right to KEEP, swipe left to TRASH. Drag resistance and dynamic badge flares indicate decisions.
+- **Unified In-App Video Player System**: Native in-app video playback inside both the fullscreen viewer and the cleaning card deck. Features a precision touch seek slider (`00:06 / 00:15`), play/pause/restart/mute controls, swipe unbinding, and an "Open with" external player fallback via `Intent.ACTION_VIEW`.
+- **Zero-Letterbox Adaptive Surface**: Card surface dimensions dynamically match the exact aspect ratio of the media with 24dp rounded corners, preventing black bars or cropping.
+- **Interactive Multi-Select**: Long-press any thumbnail in the 4-column chronological gallery or 2-column album grid to batch-select and move media to trash.
+- **Next-Gen Media Viewer**: Deep `#080A0F` canvas with ambient blurred background glow, interactive zoom pill (1.0x to 5.0x), floating EXIF metadata card, and quick-scrub thumbnail filmstrip.
+- **Native Android Trash Integration**: Uses Android Scoped Storage `MediaStore.createTrashRequest`. Items are placed in the OS recycle bin for 30 days before permanent deletion. Includes a dedicated in-app Trash screen with restore and permanent purge.
+- **Album-Scoped Cleaning**: Clean your entire camera roll or isolate specific folders like Screenshots, WhatsApp Media, or Downloads.
+- **Safety & Recovery**: Instant in-session Undo snaps cards back to the deck. Save & Exit preserves progress with Resume or Start Fresh options.
+- **System Favorite Sync**: Tapping the favorite heart in the viewer synchronizes directly with Android's system-wide `MediaStore.createFavoriteRequest`.
+
+## Architectural Stack
+
+- **UI Framework**: Jetpack Compose BOM 2024.10.01 + Material 3 Design Tokens
+- **Language**: Kotlin 2.0.21 with Coroutines & StateFlow
+- **Image & Thumbnail Pipeline**: Coil 2.7.0 with scoped Content URIs and bitmap pooling
+- **Video Engine**: Custom `SwipePixVideoPlayer` wrapping Android `MediaPlayer` and `TextureView`
+- **Local Persistence**: Room SQLite Database 2.6.1 for session state and swipe staging
+- **Media Queries**: Android MediaStore API with Scoped Storage security
+
+## Optional Links & Resources
+
+- [Official Documentation & Web App](https://swipepix.heyvinay.in/)
+- [Release Notes & Updates](https://swipepix.heyvinay.in/updates)
+- [Privacy Guarantee & Policy](https://swipepix.heyvinay.in/privacy)
+- [About the Developer](https://swipepix.heyvinay.in/about)
+- [Community Support & Voluntary Contributions](https://swipepix.heyvinay.in/donate)
+- [Developer Portfolio](https://portfolio.heyvinay.in/)

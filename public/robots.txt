@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# AI & Search Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://swipepix.heyvinay.in/sitemap.xml
+
+# LLM Documentation
+# See https://swipepix.heyvinay.in/llms.txt
+# Full Reference: https://swipepix.heyvinay.in/llms-full.txt
