@@ -1,6 +1,6 @@
 import React from 'react';
 import { NeoBadge } from '../common/NeoBadge';
-import { Smartphone, ExternalLink, ShieldCheck, Heart } from 'lucide-react';
+import { ExternalLink, Heart } from 'lucide-react';
 import { DOWNLOAD_CONFIG, SWIPEPIX_CONFIG } from '../../config/swipepix';
 
 interface FooterProps {

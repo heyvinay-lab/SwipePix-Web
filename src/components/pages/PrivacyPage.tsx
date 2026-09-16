@@ -1,17 +1,23 @@
-import React from 'react';
-import { SectionHeader } from '../common/SectionHeader';
+import { NeoBadge } from '../common/NeoBadge';
 import { ShieldCheck, EyeOff, FileText, Database, HardDrive } from 'lucide-react';
 
 export const PrivacyPage: React.FC = () => {
   return (
     <div className="py-16 bg-bg min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <SectionHeader
-          tag="ZERO-COMPROMISE POLICY"
-          tagVariant="accent"
-          title="SWIPEPIX PRIVACY POLICY"
-          subtitle="Effective Date: September 2026 • Product Version: 1.0 (Build 1)"
-        />
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="mb-3">
+            <NeoBadge variant="accent" rotate="-1">
+              ZERO-COMPROMISE PRIVACY
+            </NeoBadge>
+          </div>
+          <h1 className="font-mono text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-ink mb-3">
+            YOUR PHOTOS.<br />YOUR DEVICE.
+          </h1>
+          <p className="font-sans text-base sm:text-lg text-gray-700">
+            SwipePix Privacy Policy & Permissions Audit • 100% Local & Offline by Design
+          </p>
+        </div>
 
         {/* Commitment Banner */}
         <div className="card-brutal bg-white p-6 sm:p-8 shadow-brutal-lg space-y-6">

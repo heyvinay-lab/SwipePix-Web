@@ -1,10 +1,9 @@
 import React from 'react';
-import { SectionHeader } from '../common/SectionHeader';
 import { BrutalistCard } from '../common/BrutalistCard';
 import { BrutalistButton } from '../common/BrutalistButton';
 import { NeoBadge } from '../common/NeoBadge';
 import { SWIPEPIX_CONFIG, DOWNLOAD_CONFIG } from '../../config/swipepix';
-import { Download, CheckCircle, Github, ShieldCheck, Terminal, Bug, Heart, FileCheck, HardDrive } from 'lucide-react';
+import { Download, CheckCircle, Github, ShieldCheck, Terminal, Bug, Heart } from 'lucide-react';
 
 interface UpdatesPageProps {
   onNavigate?: (path: string) => void;
@@ -34,11 +33,19 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
   return (
     <div className="py-12 bg-bg min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <SectionHeader
-          tag="RELEASE HEADQUARTERS"
-          title="OFFICIAL UPDATE CENTER & RELEASES"
-          subtitle="Download stable signed releases, verify cryptographic checksums, and track changelogs."
-        />
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="mb-3">
+            <NeoBadge variant="accent" rotate="-1">
+              RELEASE HEADQUARTERS
+            </NeoBadge>
+          </div>
+          <h1 className="font-mono text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-ink mb-3">
+            SWIPEPIX UPDATES.
+          </h1>
+          <p className="font-sans text-base sm:text-lg text-gray-700">
+            Download stable signed releases, verify cryptographic checksums, and track changelogs.
+          </p>
+        </div>
 
         {/* Current Active Release Card */}
         <div className="card-brutal bg-white p-6 sm:p-8 shadow-brutal-lg">

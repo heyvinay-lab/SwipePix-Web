@@ -2,13 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Robots & Indexing Directives -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <!-- Primary Metadata -->
-    <title>SwipePix — 100% Offline Photo & Video Cleaner for Android | In-App Player</title>
-    <meta name="title" content="SwipePix — 100% Offline Photo & Video Cleaner for Android | In-App Player" />
-    <meta name="description" content="Declutter your Android camera roll with fast swipe triage and an all-new in-app video player. 100% offline, zero internet permission, 30-day trash safety. Built by Vinay." />
+    <title>SwipePix — Privacy-First Android Gallery Cleanup</title>
+    <meta name="title" content="SwipePix — Privacy-First Android Gallery Cleanup" />
+    <meta name="description" content="SwipePix is a privacy-first Android gallery cleanup app for reviewing and organizing photos locally, without cloud uploads." />
     <meta name="keywords" content="swipe photo cleaner android, offline photo declutter app, swipepix, clean android camera roll, video cleaner android swipe, in app video player gallery cleaner, privacy photo cleaner no internet, safe android gallery trash, vinay heyvinay swipepix" />
     <meta name="author" content="Vinay (https://portfolio.heyvinay.in/)" />
     <meta name="creator" content="Vinay" />
@@ -19,8 +25,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://swipepix.heyvinay.in/" />
-    <meta property="og:title" content="SwipePix — 100% Offline Photo & Video Cleaner for Android | In-App Player" />
-    <meta property="og:description" content="Declutter your Android camera roll with fast swipe triage and an all-new in-app video player. 100% offline, zero internet permission, 30-day trash safety. Built by Vinay." />
+    <meta property="og:title" content="SwipePix — Privacy-First Android Gallery Cleanup" />
+    <meta property="og:description" content="SwipePix is a privacy-first Android gallery cleanup app for reviewing and organizing photos locally, without cloud uploads." />
     <meta property="og:image" content="https://swipepix.heyvinay.in/og-image.svg" />
     <meta property="og:image:alt" content="SwipePix — Clean Your Gallery One Swipe at a Time" />
     <meta property="og:site_name" content="SwipePix" />
@@ -28,8 +34,8 @@
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://swipepix.heyvinay.in/" />
-    <meta property="twitter:title" content="SwipePix — 100% Offline Photo & Video Cleaner for Android | In-App Player" />
-    <meta property="twitter:description" content="Declutter your Android camera roll with fast swipe triage and an all-new in-app video player. 100% offline, zero internet permission, 30-day trash safety. Built by Vinay." />
+    <meta property="twitter:title" content="SwipePix — Privacy-First Android Gallery Cleanup" />
+    <meta property="twitter:description" content="SwipePix is a privacy-first Android gallery cleanup app for reviewing and organizing photos locally, without cloud uploads." />
     <meta property="twitter:image" content="https://swipepix.heyvinay.in/og-image.svg" />
 
     <!-- Google Fonts: Space Mono & Inter -->
@@ -46,17 +52,11 @@
           "@type": "SoftwareApplication",
           "@id": "https://swipepix.heyvinay.in/#software",
           "name": "SwipePix",
+          "url": "https://swipepix.heyvinay.in/",
           "operatingSystem": "Android 13, Android 14, Android 15 (API 33-35)",
-          "applicationCategory": "PhotographyApplication",
-          "applicationSubCategory": "Storage & Media Cleaner Utility",
+          "applicationCategory": "UtilitiesApplication",
           "downloadUrl": "https://swipepix.heyvinay.in/downloads/SwipePix-1.0.0.apk",
-          "fileSize": "4486854",
           "softwareVersion": "1.0.0",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
           "author": {
             "@type": "Person",
             "@id": "https://portfolio.heyvinay.in/#vinay",
@@ -68,18 +68,7 @@
               "https://github.com/heyvinay-lab"
             ]
           },
-          "description": "A 100% offline, privacy-first Android photo and video decluttering utility. Clean thousands of photos and videos with intuitive Tinder-style swipes, batch multi-select, and an all-new unified in-app video player. Zero ads, zero trackers, zero cloud dependencies, and zero network permission.",
-          "featureList": [
-            "Physics-driven card deck swipe triage (Right to Keep, Left to Trash)",
-            "Unified In-App Video Player with precision seek scrubber, mute toggle, and system player fallback",
-            "Direct in-deck video playback and swipe triage",
-            "Interactive long-press multi-select for batch deletion in gallery and album grids",
-            "Next-gen liquid glass photo viewer with dynamic ambient glow and thumbnail filmstrip",
-            "Android Scoped Storage 30-day system trash integration with dedicated in-app Trash screen",
-            "Album-scoped cleaning sessions with Save & Exit and Resume support",
-            "Instant reversible Undo stack for accidental swipes",
-            "100% offline architecture with zero internet permission (android.permission.INTERNET omitted)"
-          ]
+          "description": "SwipePix is a privacy-first Android gallery cleanup app for reviewing and organizing photos locally, without cloud uploads."
         },
         {
           "@type": "WebSite",
@@ -91,108 +80,6 @@
             "@id": "https://portfolio.heyvinay.in/#vinay"
           },
           "inLanguage": "en"
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://swipepix.heyvinay.in/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Is SwipePix really 100% offline?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, absolutely. SwipePix does not declare the android.permission.INTERNET permission in its manifest. The Android operating system physically forbids the app from making network connections, transmitting telemetry, or accessing remote servers."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does SwipePix clean and play videos as well as photos?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! SwipePix features a unified in-app video player. Videos can be played directly inside the fullscreen media viewer and inside the swipe cleaning card deck. You can watch, seek using the precision scrubber, pause, mute, or open with your preferred external player, and swipe right to Keep or left to Trash videos with instant Undo and safe 30-day Android system trash protection."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does SwipePix upload photos to any cloud or remote server?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. Not a single byte of your photos, videos, or metadata ever leaves your phone. All thumbnail caching, session tracking, and swipe decisions reside purely in your device's local memory and SQLite database."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What happens when I swipe left on a photo or video?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Swiping left does NOT delete the item immediately. It stages the item with a TRASH_PENDING status in an on-device database. You can undo it anytime. Only when you complete your review session does SwipePix present Android's official system confirmation dialog."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does Trash recovery work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "When you confirm deletion at the end of a session or after batch-selecting items in the gallery, Android moves the photos and videos to system trash, retaining them for 30 days. You can restore them anytime through your phone's built-in gallery or directly inside SwipePix's Trash screen."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "HowTo",
-          "@id": "https://swipepix.heyvinay.in/#howto",
-          "name": "How to Declutter Android Photos and Videos Offline with SwipePix",
-          "description": "Step-by-step guide to reviewing, playing, and decluttering your Android camera roll with swipe gestures and zero network permissions.",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "position": 1,
-              "name": "Select Album or Camera Roll",
-              "text": "Launch SwipePix and choose either your complete Camera Roll or an isolated folder like Screenshots, WhatsApp, or Downloads."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 2,
-              "name": "Swipe Right to Keep, Swipe Left to Trash",
-              "text": "Review each photo and video on an adaptive zero-letterbox card deck. Videos play automatically with custom seek scrubbing and mute controls. Swipe right to Keep or left to Trash."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 3,
-              "name": "Undo Accidental Swipes Instantly",
-              "text": "If you make a mistake, tap the Undo button to immediately pop the item back onto the top of the card deck."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 4,
-              "name": "Confirm Safe System Trash",
-              "text": "At session completion, review the summary of staged items and confirm via Android's native createTrashRequest dialog with 30-day recovery protection."
-            }
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://swipepix.heyvinay.in/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://swipepix.heyvinay.in/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Updates",
-              "item": "https://swipepix.heyvinay.in/updates"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "About",
-              "item": "https://swipepix.heyvinay.in/about"
-            }
-          ]
         }
       ]
     }

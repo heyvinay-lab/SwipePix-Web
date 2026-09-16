@@ -96,7 +96,7 @@ SwipePix/
 │   ├── App.tsx                 # Root application & client router
 │   ├── index.css               # Design tokens, fonts, & neo-brutalist utilities
 │   └── main.tsx                # React DOM entry point
-├── docs/                       # Project documentation & build specifications
+├── docs/                       # Project documentation & architecture specifications
 │   ├── SWIPEPIX_WEBSITE_BUILD_SPEC.md
 │   ├── SWIPEPIX_WEBSITE_CONTENT.md
 │   ├── SWIPEPIX_COMPLETE_TECHNICAL_KNOWLEDGE.md

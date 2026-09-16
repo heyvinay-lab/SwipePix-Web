@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { SectionHeader } from '../common/SectionHeader';
 import { BrutalistButton } from '../common/BrutalistButton';
 import { SWIPEPIX_CONFIG } from '../../config/swipepix';
 import { Send, Copy, Check, MessageSquare, Github, ExternalLink } from 'lucide-react';
@@ -62,12 +61,19 @@ ${formData.message}`;
   return (
     <div className="py-16 bg-bg min-h-screen">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <SectionHeader
-          tag="USER VOICE"
-          tagVariant="primary"
-          title="SEND FEEDBACK & REPORT BUGS"
-          subtitle="Encountered an issue or have an idea to make gallery triage faster? We read every submission."
-        />
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="mb-3">
+            <span className="font-mono text-xs font-bold uppercase bg-primary text-white px-2.5 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505] inline-block -rotate-1">
+              USER VOICE
+            </span>
+          </div>
+          <h1 className="font-mono text-4xl sm:text-5xl font-bold uppercase tracking-tight text-ink mb-3">
+            SEND FEEDBACK & REPORT BUGS
+          </h1>
+          <p className="font-sans text-base sm:text-lg text-gray-700">
+            Encountered an issue or have an idea to make gallery triage faster? We read every submission.
+          </p>
+        </div>
 
         {/* Dual Channel Choice */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

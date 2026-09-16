@@ -1,5 +1,4 @@
 import React from 'react';
-import { SectionHeader } from '../common/SectionHeader';
 import { BrutalistCard } from '../common/BrutalistCard';
 import { BrutalistButton } from '../common/BrutalistButton';
 import { NeoBadge } from '../common/NeoBadge';
@@ -13,12 +12,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   return (
     <div className="py-16 bg-bg min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <SectionHeader
-          tag="CREATOR PROFILE"
-          tagVariant="primary"
-          title="ABOUT THE DEVELOPER"
-          subtitle="Independent, privacy-first software engineered with modern craft."
-        />
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="mb-3">
+            <NeoBadge variant="primary" rotate="-1">
+              CREATOR PROFILE
+            </NeoBadge>
+          </div>
+          <h1 className="font-mono text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-ink mb-3">
+            ABOUT SWIPEPIX.
+          </h1>
+          <p className="font-sans text-base sm:text-lg text-gray-700">
+            Independent, privacy-first software engineered with modern craft.
+          </p>
+        </div>
 
         {/* Developer Bio Card */}
         <BrutalistCard bgColor="bg-white" className="p-8 sm:p-10 shadow-brutal-lg">

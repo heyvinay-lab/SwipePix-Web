@@ -288,9 +288,9 @@ SwipePix is 100% free with no paywalls, subscriptions, or ads. If SwipePix helps
 - Dedicated RSA 4096-bit release keystore with clean Google Play Protect verification.
 
 ### Download Section
-- **Direct APK:** `Download SwipePix v1.0 (Direct APK)`
-- **Verification Note:** All releases are cryptographically signed with the official developer release key.
-- **GitHub Releases:** Alternative direct download source available on GitHub.
+- **Direct APK:** `Download SwipePix` — `/downloads/SwipePix-1.0.0.apk`
+- **Verification Note:** All releases are cryptographically signed with the official developer release key (SHA-256: `0c2656105ccc884be70a493555643099ce63f28264070ad99a9866b03e48a3cb`, Size: 4.28 MB / 4,486,854 bytes).
+- **Source Code:** Available on GitHub at https://github.com/heyvinay-lab/SwipePix.
 
 ---
 

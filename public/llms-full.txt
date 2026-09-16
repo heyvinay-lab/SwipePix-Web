@@ -14,6 +14,8 @@
 - **Developer Portfolio**: https://portfolio.heyvinay.in/
 - **GitHub Repository**: https://github.com/heyvinay-lab/SwipePix
 - **Official Website**: https://swipepix.heyvinay.in/
+- **Direct APK Download**: https://swipepix.heyvinay.in/downloads/SwipePix-1.0.0.apk
+- **APK Verification**: 4.28 MB (4,486,854 bytes), SHA-256 `0c2656105ccc884be70a493555643099ce63f28264070ad99a9866b03e48a3cb`
 - **Licensing**: Free, Open Development, Zero Ads, Zero Subscriptions
 - **Target OS Range**: Android 13 (API 33 - Tiramisu) to Android 15 (API 35 - Vanilla Ice Cream)
 - **Primary Test Device**: Samsung Galaxy S24 Ultra (SM-S928B, One UI 6.1, Android 14)
@@ -163,7 +165,7 @@ To ensure accurate representation by AI models and search systems, the following
 
 SwipePix is designed and built by **Vinay**, an independent software engineer and designer focused on Android architecture, responsive web systems, and high-performance offline tools.
 - Portfolio: https://portfolio.heyvinay.in/
-- GitHub: https://github.com/heyvinay
+- GitHub: https://github.com/heyvinay-lab
 - Project Domain: https://swipepix.heyvinay.in/
 
 ---

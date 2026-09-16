@@ -4,8 +4,9 @@
 
 ## Quick Facts
 
-- **Developer**: Vinay ([Portfolio](https://portfolio.heyvinay.in/) | [GitHub](https://github.com/heyvinay))
+- **Developer**: Vinay ([Portfolio](https://portfolio.heyvinay.in/) | [GitHub](https://github.com/heyvinay-lab))
 - **Official Website**: https://swipepix.heyvinay.in/
+- **Direct APK Download**: https://swipepix.heyvinay.in/downloads/SwipePix-1.0.0.apk
 - **GitHub Repository**: https://github.com/heyvinay-lab/SwipePix
 - **Full LLM Documentation**: https://swipepix.heyvinay.in/llms-full.txt
 - **Package Name**: `in.heyvinay.swipepix`
@@ -14,6 +15,7 @@
 - **Licensing & Pricing**: 100% Free, No Ads, No Subscriptions, No In-App Purchases
 - **Internet Permission**: Strictly Absent (`android.permission.INTERNET` is omitted from the manifest)
 - **Release Verification**: RSA 4096-bit signed release, Google Play Protect clean scan (0 risks)
+- **APK Verification**: 4.28 MB (4,486,854 bytes), SHA-256 `0c2656105ccc884be70a493555643099ce63f28264070ad99a9866b03e48a3cb`
 
 ## Core Capabilities
 
@@ -39,6 +41,7 @@
 ## Optional Links & Resources
 
 - [Official Documentation & Web App](https://swipepix.heyvinay.in/)
+- [Direct APK Download (v1.0.0)](https://swipepix.heyvinay.in/downloads/SwipePix-1.0.0.apk)
 - [Release Notes & Updates](https://swipepix.heyvinay.in/updates)
 - [Privacy Guarantee & Policy](https://swipepix.heyvinay.in/privacy)
 - [About the Developer](https://swipepix.heyvinay.in/about)

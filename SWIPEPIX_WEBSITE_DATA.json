@@ -559,7 +559,7 @@
     {
       "intentType": "Navigational",
       "query": "swipepix vinay portfolio apk download",
-      "answer": "SwipePix is built by Vinay (portfolio: https://portfolio.heyvinay.in/) and available as a signed release on GitHub and https://swipepix.heyvinay.in/."
+      "answer": "SwipePix is built by Vinay (portfolio: https://portfolio.heyvinay.in/) and available as a direct APK download at https://swipepix.heyvinay.in/."
     },
     {
       "intentType": "Technical / Security",
@@ -842,14 +842,14 @@
       }
     ],
     "cta": {
-      "label": "DOWNLOAD APK",
-      "href": "/updates"
+      "label": "Download SwipePix",
+      "href": "/downloads/SwipePix-1.0.0.apk"
     },
     "footerLinks": {
       "product": [
         {
-          "label": "Download v1.0",
-          "href": "/updates"
+          "label": "Download SwipePix",
+          "href": "/downloads/SwipePix-1.0.0.apk"
         },
         {
           "label": "Release Notes",
@@ -906,10 +906,12 @@
     "minAndroid": "Android 13+ (API 33)",
     "apkStatus": "DIRECT_RELEASE",
     "apkDownloadUrl": "/downloads/SwipePix-1.0.0.apk",
+    "fileName": "SwipePix-1.0.0.apk",
     "playStoreUrl": null,
     "githubReleaseUrl": "https://github.com/heyvinay-lab/SwipePix/releases",
-    "checksumSha256": null,
-    "fileSizeBytes": 4486854
+    "checksumSha256": "0c2656105ccc884be70a493555643099ce63f28264070ad99a9866b03e48a3cb",
+    "fileSizeBytes": 4486854,
+    "fileSizeFormatted": "4.28 MB"
   },
   "support": {
     "developerSite": "https://portfolio.heyvinay.in/",
