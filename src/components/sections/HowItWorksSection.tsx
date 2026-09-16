@@ -117,11 +117,12 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
               size="sm"
               asLink={true}
               href={DOWNLOAD_CONFIG.apkUrl}
-              download="SwipePix-1.0.0.apk"
-              className="text-xs font-bold whitespace-nowrap"
+              download={DOWNLOAD_CONFIG.fileName}
+              aria-label={`Download SwipePix APK v${DOWNLOAD_CONFIG.version}`}
+              className="text-xs font-bold whitespace-nowrap shadow-brutal-sm"
             >
               <Download className="w-4 h-4 mr-1.5 inline" />
-              Download APK
+              Download SwipePix
             </BrutalistButton>
           </div>
         </div>

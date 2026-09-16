@@ -1,6 +1,7 @@
 import React from 'react';
 import { NeoBadge } from '../common/NeoBadge';
 import { Smartphone, ExternalLink, ShieldCheck, Heart } from 'lucide-react';
+import { DOWNLOAD_CONFIG, SWIPEPIX_CONFIG } from '../../config/swipepix';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -29,24 +30,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 1: Brand & Positioning (2 cols wide on LG) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-primary border-2 border-white rounded flex items-center justify-center">
-                <Smartphone className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-mono text-2xl font-bold tracking-tight text-white">
-                SwipePix
+              <span className="font-mono text-xl font-bold tracking-tight text-white">
+                SWIPEPIX
               </span>
-              <NeoBadge variant="accent" rotate="1" className="text-[10px]">
-                OFFLINE v1.0
+              <NeoBadge variant="accent" rotate="-2" className="text-[10px] px-1.5 py-0.5">
+                v{DOWNLOAD_CONFIG.version}
               </NeoBadge>
             </div>
-            <p className="font-sans text-sm text-gray-300 max-w-sm leading-relaxed">
-              The privacy-first, local-only Android gallery cleaner. Rapid card-based swipe triage with native Android system trash safety. Zero internet permission, zero cloud uploads, zero telemetry.
+            <p className="font-sans text-xs text-gray-400 max-w-sm leading-relaxed">
+              The high-performance, 100% offline Android photo & video cleaner. Designed and built with strict local-first privacy, tactile card mechanics, and native system trash protection.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              <span className="inline-flex items-center gap-1 font-mono text-xs bg-black text-accent px-2 py-1 border border-accent">
-                <ShieldCheck className="w-3.5 h-3.5" /> 100% On-Device
-              </span>
-              <span className="inline-flex items-center gap-1 font-mono text-xs bg-black text-warm px-2 py-1 border border-warm">
+            <div className="flex items-center gap-2 text-xs font-mono text-gray-400">
+              <span className="inline-block w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span>
                 Android 13+ (API 33-35)
               </span>
             </div>
@@ -59,18 +55,29 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </h4>
             <ul className="space-y-2.5 font-mono text-xs">
               <li>
-                <a href="/downloads/SwipePix-1.0.0.apk" download="SwipePix-1.0.0.apk" className="text-gray-300 hover:text-white transition-colors">
-                  Download APK v1.0.0
+                <a
+                  href={DOWNLOAD_CONFIG.apkUrl}
+                  download={DOWNLOAD_CONFIG.fileName}
+                  aria-label={`Download SwipePix APK v${DOWNLOAD_CONFIG.version}`}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Download SwipePix
                 </a>
               </li>
               <li>
                 <a href="/updates" onClick={(e) => handleNav(e, '/updates')} className="text-gray-300 hover:text-white transition-colors">
-                  Release Notes
+                  Updates & Changelog
                 </a>
               </li>
               <li>
-                <a href="https://github.com/heyvinay-lab/SwipePix/releases" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
-                  GitHub Releases <ExternalLink className="w-3 h-3 text-gray-500" />
+                <a
+                  href={SWIPEPIX_CONFIG.githubRepoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View SwipePix source code on GitHub"
+                  className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1"
+                >
+                  Source Code (GitHub) <ExternalLink className="w-3 h-3 text-gray-500" />
                 </a>
               </li>
               <li>

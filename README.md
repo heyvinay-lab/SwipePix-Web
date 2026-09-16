@@ -96,10 +96,13 @@ SwipePix/
 │   ├── App.tsx                 # Root application & client router
 │   ├── index.css               # Design tokens, fonts, & neo-brutalist utilities
 │   └── main.tsx                # React DOM entry point
+├── docs/                       # Project documentation & build specifications
+│   ├── SWIPEPIX_WEBSITE_BUILD_SPEC.md
+│   ├── SWIPEPIX_WEBSITE_CONTENT.md
+│   ├── SWIPEPIX_COMPLETE_TECHNICAL_KNOWLEDGE.md
+│   └── SWIPEPIX_INTERVIEW_CHEATSHEET.md
 ├── scripts/                    # Synchronization and data management scripts
-├── SWIPEPIX_WEBSITE_BUILD_SPEC.md  # Architectural build specification
-├── SWIPEPIX_WEBSITE_CONTENT.md     # Copy-ready content blueprint
-├── SWIPEPIX_WEBSITE_DATA.json      # Machine-readable product truth
+├── SWIPEPIX_WEBSITE_DATA.json  # Machine-readable product truth
 └── vercel.json                 # Vercel deployment routing and headers
 ```
 
