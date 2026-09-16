@@ -27,12 +27,11 @@ export const DownloadCtaSection: React.FC<DownloadCtaSectionProps> = ({ onNaviga
           </div>
 
           <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-ink">
-            READY TO DECLUTTER <br />
-            YOUR ENTIRE GALLERY?
+            Ready to clean your gallery?
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            SwipePix is distributed directly as an Android APK. Download the APK and install it on a compatible Android 13+ device without creating an account.
+            Download SwipePix and start cleaning in seconds. Zero account required, 100% offline, and safe on-device processing.
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-4">
@@ -45,7 +44,7 @@ export const DownloadCtaSection: React.FC<DownloadCtaSectionProps> = ({ onNaviga
               aria-label={`Download SwipePix APK v${DOWNLOAD_CONFIG.version}`}
               className="text-base font-bold shadow-brutal"
             >
-              <Download className="w-5 h-5 mr-2 text-ink" /> DOWNLOAD SWIPEPIX
+              <Download className="w-5 h-5 mr-2 text-ink" /> Download SwipePix APK
             </BrutalistButton>
 
             <BrutalistButton
@@ -55,9 +54,9 @@ export const DownloadCtaSection: React.FC<DownloadCtaSectionProps> = ({ onNaviga
                 onNavigate('/updates');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="text-base"
+              className="text-base font-bold"
             >
-              VIEW RELEASE NOTES & CHECKSUM
+              View Release Notes & Checksum
             </BrutalistButton>
 
             <BrutalistButton
@@ -67,22 +66,22 @@ export const DownloadCtaSection: React.FC<DownloadCtaSectionProps> = ({ onNaviga
               href={SWIPEPIX_CONFIG.githubRepoUrl}
               external={true}
               aria-label="View source code on GitHub"
-              className="text-base"
+              className="text-base font-bold"
             >
-              <Github className="w-5 h-5 mr-2" /> GITHUB SOURCE
+              <Github className="w-5 h-5 mr-2" /> GitHub Source
             </BrutalistButton>
           </div>
 
           {/* Micro Meta Badges with verified facts */}
           <div className="pt-4 border-t-2 border-dashed border-gray-300 flex flex-wrap justify-center items-center gap-4 sm:gap-6 font-mono text-xs text-gray-600">
             <span className="flex items-center gap-1.5">
-              <Smartphone className="w-4 h-4 text-primary" /> Android 13+ (API 33-35)
+              <Smartphone className="w-4 h-4 text-primary" /> Android 13+
             </span>
             <span className="flex items-center gap-1.5">
-              <HardDrive className="w-4 h-4 text-primary" /> {DOWNLOAD_CONFIG.fileSizeFormatted} ({DOWNLOAD_CONFIG.fileSizeBytes.toLocaleString()} bytes)
+              <HardDrive className="w-4 h-4 text-primary" /> 4.28 MB APK
             </span>
             <span className="flex items-center gap-1.5">
-              <FileCheck className="w-4 h-4 text-accent-hover" /> Direct APK download
+              <FileCheck className="w-4 h-4 text-accent-hover" /> No account required
             </span>
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-accent-hover" /> Zero network permissions

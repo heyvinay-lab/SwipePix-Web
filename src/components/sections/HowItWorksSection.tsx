@@ -2,7 +2,7 @@ import React from 'react';
 import { SectionHeader } from '../common/SectionHeader';
 import { NeoBadge } from '../common/NeoBadge';
 import { BrutalistButton } from '../common/BrutalistButton';
-import { FolderCheck, MoveRight, BookmarkCheck, ShieldAlert, Download } from 'lucide-react';
+import { FolderCheck, MoveRight, ShieldCheck, Download } from 'lucide-react';
 import { DOWNLOAD_CONFIG } from '../../config/download';
 
 interface HowItWorksSectionProps {
@@ -13,34 +13,26 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
   const steps = [
     {
       num: '01',
-      badge: 'SELECT & FILTER',
-      title: 'OPEN & TARGET AN ALBUM',
-      desc: 'Launch SwipePix and choose your entire camera roll or isolate a high-bloat folder (WhatsApp, Screenshots, Downloads). Tap filter chips to view Videos or Favorites.',
+      badge: 'TARGET',
+      title: 'Pick your source',
+      desc: 'Choose your entire camera roll or isolate heavy folders like WhatsApp, Screenshots, or Downloads. Filter by photos, videos, or favorites.',
       icon: FolderCheck,
       color: 'bg-primary text-white',
     },
     {
       num: '02',
-      badge: 'TRIAGE & BATCH',
-      title: 'SWIPE DECK OR MULTI-SELECT',
-      desc: 'Review photos and watch videos in-deck (Right = Keep, Left = Trash). Videos play seamlessly with precision scrubber and mute controls, or long-press thumbnails to select and batch-trash in seconds.',
+      badge: 'TRIAGE',
+      title: 'Swipe right or left',
+      desc: 'Swipe Right to keep. Swipe Left to trash. Videos play with smooth scrub controls right in the card deck, and you can undo any swipe instantly.',
       icon: MoveRight,
       color: 'bg-accent text-ink',
     },
     {
       num: '03',
-      badge: 'PERSISTENCE',
-      title: 'SAVE & EXIT OR UNDO',
-      desc: 'Need to pause? Tap Save & Exit. Your review checkpoint is persisted in local SQLite. Resume anytime, and reverse slips with 1-tap Undo.',
-      icon: BookmarkCheck,
-      color: 'bg-secondary text-white',
-    },
-    {
-      num: '04',
-      badge: 'PLATFORM SAFETY',
-      title: 'ANDROID SYSTEM TRASH',
-      desc: 'SwipePix never deletes files silently. All deletions trigger Android’s official confirmation dialog. Approved files stay recoverable in system trash for 30 days.',
-      icon: ShieldAlert,
+      badge: 'SAFETY',
+      title: 'Review & confirm',
+      desc: 'Review staged media, then confirm deletion with Android’s native dialog. Files move to Android system trash where they stay recoverable for 30 days.',
+      icon: ShieldCheck,
       color: 'bg-warm text-ink',
     },
   ];
@@ -49,46 +41,47 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
     <section id="how-it-works" className="py-20 bg-white border-b-3 border-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          tag="WORKFLOW ARCHITECTURE"
+          tag="3-STEP FLOW"
           tagVariant="primary"
-          title="HOW SWIPEPIX WORKS IN 4 STEPS"
-          subtitle="Designed to eliminate decision fatigue while guaranteeing absolute deletion safety."
+          title="HOW SWIPEPIX WORKS"
+          subtitle="Clean thousands of photos in minutes without accidental deletions."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.num}
-                className="card-brutal bg-bg p-6 flex flex-col justify-between relative hover:-translate-y-1 transition-transform"
+                className="card-brutal bg-bg p-6 sm:p-8 flex flex-col justify-between relative hover:-translate-y-1 transition-transform"
               >
-                {/* Step Number Stamp */}
-                <div className="flex justify-between items-start mb-4 border-b-2 border-ink pb-3">
-                  <span className="font-mono text-4xl font-bold tracking-tighter text-ink">
+                {/* Step Number Stamp & Icon */}
+                <div className="flex justify-between items-start mb-6 border-b-2 border-ink pb-4">
+                  <span className="font-mono text-5xl font-bold tracking-tighter text-ink">
                     {step.num}
                   </span>
-                  <div className={`p-2 border-2 border-ink rounded shadow-[2px_2px_0px_#050505] ${step.color}`}>
-                    <Icon className="w-5 h-5" />
+                  <div className={`p-3 border-2 border-ink rounded shadow-[2px_2px_0px_#050505] ${step.color}`}>
+                    <Icon className="w-6 h-6" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-2 mb-4">
+                <div className="space-y-3 mb-6">
                   <NeoBadge variant="white" rotate={idx % 2 === 0 ? '-1' : '1'} className="text-[10px]">
                     {step.badge}
                   </NeoBadge>
-                  <h3 className="font-mono text-base font-bold text-ink uppercase mt-2">
+                  <h3 className="font-mono text-xl font-bold text-ink uppercase">
                     {step.title}
                   </h3>
-                  <p className="font-sans text-xs text-gray-700 leading-relaxed">
+                  <p className="font-sans text-sm text-gray-700 leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
-                {/* Bottom Connection Wire */}
-                <div className="pt-2 border-t border-dashed border-gray-400 text-[10px] font-mono font-bold text-gray-700 uppercase">
-                  STEP {idx + 1} OF 4
+                {/* Bottom Indicator */}
+                <div className="pt-3 border-t border-dashed border-gray-400 text-xs font-mono font-bold text-gray-700 uppercase flex items-center justify-between">
+                  <span>STEP {idx + 1} OF 3</span>
+                  <span className="text-primary">→</span>
                 </div>
               </div>
             );
@@ -96,25 +89,25 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
         </div>
 
         {/* Banner Explaining Staging vs Native Trash */}
-        <div className="mt-12 p-5 bg-lime-100 border-3 border-ink shadow-brutal flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1 text-center md:text-left">
+        <div className="mt-12 p-6 bg-lime-100 border-3 border-ink shadow-brutal flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1.5 text-center md:text-left">
             <span className="font-mono text-xs font-bold text-ink bg-white px-2 py-0.5 border border-ink uppercase">
-              CRITICAL PRIVACY & SAFETY CONTRACT
+              DELETION SAFETY GUARANTEE
             </span>
-            <h3 className="font-mono text-lg font-bold text-ink">
-              SWIPE LEFT OR BATCH SELECT = STAGED IN DATABASE • ZERO SILENT DELETION
+            <h3 className="font-mono text-lg sm:text-xl font-bold text-ink">
+              ZERO SILENT DELETIONS • NATIVE ANDROID SYSTEM TRASH
             </h3>
-            <p className="font-sans text-xs text-gray-800 max-w-2xl">
-              Files are physically untouched on your device until you finish your session or confirm batch trashing via Android’s native platform modal.
+            <p className="font-sans text-xs sm:text-sm text-gray-800 max-w-2xl">
+              Files are never permanently deleted behind your back. All trashing operations request your approval via Android’s official system dialog, keeping files restorable for 30 days.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
             <NeoBadge variant="warm" rotate="2" className="text-xs px-3 py-1.5 shadow-brutal-sm">
-              30-DAY RESTORE GUARANTEE
+              30-DAY RESTORE
             </NeoBadge>
             <BrutalistButton
               variant="accent"
-              size="sm"
+              size="md"
               asLink={true}
               href={DOWNLOAD_CONFIG.apkUrl}
               download={DOWNLOAD_CONFIG.fileName}

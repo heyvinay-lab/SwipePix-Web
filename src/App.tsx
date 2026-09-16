@@ -39,7 +39,7 @@ export function App({ initialPath }: { initialPath?: string } = {}) {
     if (typeof document === 'undefined') return;
 
     const titleMap: Record<string, string> = {
-      '/': 'SwipePix — Privacy-First Android Gallery Cleanup',
+      '/': 'SwipePix — Offline Android Gallery Cleaner',
       '/donate': 'Support SwipePix — Privacy-First Android Gallery Cleanup',
       '/updates': 'SwipePix Updates — Privacy-First Android Gallery Cleanup',
       '/privacy': 'SwipePix Privacy — Local & Offline by Design',
@@ -48,7 +48,7 @@ export function App({ initialPath }: { initialPath?: string } = {}) {
     };
 
     const descMap: Record<string, string> = {
-      '/': 'SwipePix is a privacy-first Android gallery cleanup app for reviewing and organizing photos locally, without cloud uploads.',
+      '/': 'Clean your Android gallery faster with SwipePix. Swipe to keep or trash photos and videos with offline, local-first processing.',
       '/donate': 'Support SwipePix, a privacy-first Android gallery cleanup app built to help organize your photo library locally.',
       '/updates': 'Follow SwipePix updates, improvements, fixes, and new features for the privacy-first Android gallery cleanup app.',
       '/privacy': 'Learn how SwipePix handles your photos, permissions, local data, and privacy without cloud uploads.',

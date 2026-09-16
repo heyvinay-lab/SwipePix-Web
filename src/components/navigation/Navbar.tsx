@@ -38,8 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
   const navLinks = [
     { label: 'Features', href: '/#features' },
     { label: 'How It Works', href: '/#how-it-works' },
+    { label: 'Privacy', href: '/#privacy' },
+    { label: 'FAQ', href: '/#faq' },
     { label: 'Updates', href: '/updates' },
-    { label: 'Privacy', href: '/privacy' },
     { label: 'About', href: '/about' },
   ];
 

@@ -134,6 +134,7 @@ export const SwipeInteractiveDemo: React.FC = () => {
 
   const keptCount = history.filter((h) => h.action === 'KEEP').length;
   const trashedCount = history.filter((h) => h.action === 'TRASH').length;
+  const remainingCount = Math.max(0, DEMO_CARDS.length - currentIndex);
 
   return (
     <div id="demo" className="card-brutal bg-white p-6 sm:p-8 max-w-4xl mx-auto shadow-brutal-lg">
@@ -142,24 +143,29 @@ export const SwipeInteractiveDemo: React.FC = () => {
         <div>
           <div className="flex items-center gap-2">
             <NeoBadge variant="warm" rotate="-1">
-              TRY IT YOURSELF
+              INTERACTIVE DEMO
             </NeoBadge>
             <span className="font-mono text-xs text-gray-700 font-bold hidden sm:inline">
-              [ REAL-TIME ENGINE DEMO ]
+              [ REAL-TIME ENGINE PREVIEW ]
             </span>
           </div>
-          <h3 className="font-mono text-2xl font-bold uppercase text-ink mt-1">
-            EXPERIENCE THE SWIPE TRIAGE FLOW
+          <h3 className="font-mono text-2xl sm:text-3xl font-bold uppercase text-ink mt-1">
+            Clean your gallery like this.
           </h3>
         </div>
 
-        {/* Live Counter Pill */}
-        <div className="flex items-center gap-2 font-mono text-xs font-bold">
+        {/* Live Status Counter Pill */}
+        <div className="flex items-center gap-1.5 font-mono text-xs font-bold flex-wrap">
           <span className="bg-pink-100 text-ink px-2.5 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-            TRASHED: {trashedCount}
+            TRASHED {trashedCount}
           </span>
+          <span className="text-gray-400 font-bold">·</span>
           <span className="bg-lime-100 text-ink px-2.5 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-            KEPT: {keptCount}
+            KEPT {keptCount}
+          </span>
+          <span className="text-gray-400 font-bold">·</span>
+          <span className="bg-white text-gray-700 px-2.5 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505]">
+            {remainingCount} REMAINING
           </span>
         </div>
       </div>
@@ -200,9 +206,9 @@ export const SwipeInteractiveDemo: React.FC = () => {
             </ul>
           </div>
 
-          <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-300 text-[11px] font-mono text-amber-900">
+          <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-300 text-[11px] font-mono text-amber-900 shadow-xs">
             <Info className="w-4 h-4 shrink-0 text-amber-700" />
-            <span>Interactive simulation only. No files on your phone are touched.</span>
+            <span>Interactive demo only. Your files are not affected.</span>
           </div>
 
           {/* Action Buttons for Accessible Click/Keyboard Trigger */}

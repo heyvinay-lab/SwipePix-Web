@@ -13,10 +13,10 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
     <section id="privacy" className="py-24 bg-dark text-white border-b-3 border-ink relative overflow-hidden bg-grid-dots-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          tag="THE ZERO-NETWORK FORTRESS"
+          tag="OFFLINE PRIVACY"
           tagVariant="accent"
-          title="YOUR PHOTOS STAY YOUR PHOTOS."
-          subtitle="Engineered with absolute privacy. No marketing spin. Here is the actual technical proof."
+          title="YOUR PHOTOS STAY ON YOUR PHONE."
+          subtitle="SwipePix processes all media locally on your Android device without cloud uploads, accounts, or network dependencies."
           darkTheme={true}
         />
 
@@ -28,7 +28,7 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
               NO INTERNET PERMISSION
             </span>
             <span className="text-[10px] text-gray-400 font-sans block mt-1">
-              Physically blocked by Android OS
+              Zero network socket access
             </span>
           </div>
 
@@ -38,7 +38,7 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
               NO CLOUD UPLOADS
             </span>
             <span className="text-[10px] text-gray-400 font-sans block mt-1">
-              Zero bytes leave your phone
+              Zero media leaves your device
             </span>
           </div>
 
@@ -48,14 +48,14 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
               NO TRACKERS
             </span>
             <span className="text-[10px] text-gray-400 font-sans block mt-1">
-              No Firebase, ads, or analytics
+              No analytics, telemetry, or ads
             </span>
           </div>
 
           <div className="p-4 bg-darkSurface border-2 border-white shadow-[4px_4px_0px_#FFFFFF]">
             <Database className="w-6 h-6 mx-auto mb-2 text-white" />
             <span className="text-xs font-bold uppercase block text-white">
-              LOCAL SQLITE ONLY
+              LOCAL PROCESSING
             </span>
             <span className="text-[10px] text-gray-400 font-sans block mt-1">
               On-device sandboxed storage
@@ -82,12 +82,12 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
 <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
 
 <!-- NOTICE: INTERNET PERMISSION IS COMPLETELY EXCLUDED -->
-<!-- <uses-permission android:name="android.permission.INTERNET" /> -->
-<!-- The Android kernel physically denies all socket & network calls -->`}</code>
+<!-- android.permission.INTERNET is never requested -->
+<!-- The Android system restricts app from creating network sockets -->`}</code>
             </pre>
 
             <div className="mt-3 pt-3 border-t border-gray-800 flex justify-between items-center text-[10px] text-gray-400">
-              <span>Audited against \`c:/Users/vinay/AndroidStudioProjects/SwipePix\`</span>
+              <span>Audited against official open source repository</span>
               <span className="text-accent font-bold">100% VERIFIED</span>
             </div>
           </div>
@@ -98,16 +98,16 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
               <FloppyDiskSvg className="w-16 h-16 shrink-0" />
               <div>
                 <h3 className="font-mono text-lg font-bold uppercase text-white">
-                  PHYSICAL DISK ISOLATION
+                  LOCAL-FIRST ARCHITECTURE
                 </h3>
                 <p className="font-sans text-xs text-gray-300 mt-1">
-                  Your photos never touch an external server because the app lacks the physical permission to establish a socket.
+                  Your photos and videos are read directly through the Android MediaStore content provider and never transmitted off your device.
                 </p>
               </div>
             </div>
 
             <p className="font-sans text-xs text-gray-300 leading-relaxed">
-              When you use SwipePix, thumbnail decoding happens via your device’s GPU and MediaStore cache. Session decisions are recorded in an encrypted, on-device SQLite database created via AndroidX Room. 
+              When you use SwipePix, thumbnail decoding happens via your device’s hardware-accelerated MediaStore cache. Review sessions are recorded exclusively in an on-device SQLite database created via AndroidX Room.
             </p>
 
             <div className="pt-2">
@@ -119,7 +119,7 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
-                READ TECHNICAL PRIVACY AUDIT →
+                View technical privacy details →
               </BrutalistButton>
             </div>
           </div>

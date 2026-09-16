@@ -27,57 +27,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Monumental Neo-Brutalist Copy */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Top Badge Row */}
+            {/* Eyebrow Badge Row */}
             <div className="flex flex-wrap items-center gap-2">
-              <NeoBadge variant="primary" rotate="-1">
-                ANDROID UTILITY
-              </NeoBadge>
-              <NeoBadge variant="accent" rotate="1">
-                ZERO CLOUD
-              </NeoBadge>
-              <NeoBadge variant="warm" rotate="-2">
-                ZERO TRACKERS
-              </NeoBadge>
-              <span className="font-mono text-xs font-bold text-gray-600 bg-white px-2 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-                v{DOWNLOAD_CONFIG.version} STABLE
+              <span className="font-mono text-xs font-bold text-ink bg-accent px-3 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505] tracking-wider uppercase">
+                PRIVATE • OFFLINE • ANDROID
+              </span>
+              <span className="font-mono text-xs font-bold text-gray-700 bg-white px-2 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505]">
+                v{DOWNLOAD_CONFIG.version} APK
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-mono text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-ink leading-[1.05]">
-              CLEAN YOUR <br />
+              Clean your gallery. <br />
               <span className="text-primary underline decoration-ink decoration-wavy decoration-2">
-                GALLERY.
+                One swipe
               </span>{' '}
-              <br />
-              ONE SWIPE <br />
-              <span className="text-ink bg-accent px-2 border-3 border-ink inline-block mt-1 shadow-[4px_4px_0px_#050505] -rotate-1">
-                AT A TIME.
-              </span>
+              at a time.
             </h1>
 
-            {/* Subtitle */}
+            {/* Subtitle / Value Proposition */}
             <p className="font-sans text-lg sm:text-xl text-gray-800 font-medium max-w-2xl leading-relaxed">
-              SwipePix is a 100% offline Android gallery and media cleaner. Triage thousands of photos and videos with intuitive swipe gestures, batch multi-select, and an all-new unified in-app video player. Zero ads, zero trackers, zero cloud dependencies, and protected by native 30-day Android system trash.
+              Swipe through photos and videos, keep what matters, and send unwanted media to the trash — directly on your phone.
             </p>
 
-            {/* Micro Trust Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px] font-bold">
-              <div className="flex items-center gap-1.5 bg-white p-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-                <ShieldCheck className="w-3.5 h-3.5 text-primary shrink-0" />
-                <span>NO INTERNET PERM</span>
+            {/* 4 Trust Pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 font-mono text-xs font-bold">
+              <div className="flex items-center gap-2 bg-white px-3 py-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
+                <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
+                <span>No account</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-white p-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-                <Zap className="w-3.5 h-3.5 text-warm shrink-0" />
-                <span>IN-APP VIDEO PLAYER</span>
+              <div className="flex items-center gap-2 bg-white px-3 py-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
+                <Zap className="w-4 h-4 text-amber-500 shrink-0" />
+                <span>Works offline</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-white p-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-                <ShieldCheck className="w-3.5 h-3.5 text-accent-hover shrink-0" />
-                <span>NATIVE SYSTEM TRASH</span>
+              <div className="flex items-center gap-2 bg-white px-3 py-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
+                <ShieldCheck className="w-4 h-4 text-accent-hover shrink-0" />
+                <span>No cloud uploads</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-white p-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
-                <span className="w-2 h-2 rounded-full bg-accent inline-block shrink-0" />
-                <span>PLAY PROTECT CLEAN</span>
+              <div className="flex items-center gap-2 bg-white px-3 py-2 border-2 border-ink shadow-[2px_2px_0px_#050505]">
+                <span className="w-2.5 h-2.5 rounded-full bg-accent inline-block shrink-0 border border-ink" />
+                <span>Android 13+</span>
               </div>
             </div>
 
@@ -92,16 +82,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 aria-label={`Download SwipePix APK v${DOWNLOAD_CONFIG.version}`}
                 className="text-base font-bold shadow-brutal"
               >
-                <Download className="w-5 h-5 mr-2 text-ink" /> DOWNLOAD SWIPEPIX
+                <Download className="w-5 h-5 mr-2 text-ink" /> Download SwipePix
               </BrutalistButton>
 
               <BrutalistButton
                 variant="white"
                 size="lg"
                 onClick={scrollToDemo}
-                className="text-base"
+                className="text-base font-bold"
               >
-                TRY INTERACTIVE DEMO
+                Try the interactive demo
               </BrutalistButton>
 
               <a

@@ -1,45 +1,45 @@
 # SwipePix Website — GSD State Machine
 
 ## CURRENT_PHASE
-PHASE I — FINAL DOWNLOAD, ACCESSIBILITY & PERFORMANCE QA (COMPLETED)
+PHASE J — 10/10 CONSUMER PRODUCT REDESIGN (COMPLETED)
 
 ## CURRENT_TASK
-Production-verified release: direct APK download architecture, 100% sequential heading hierarchy, WCAG AA contrast compliance, zero unnamed interactive elements, vendor code-splitting, and font performance optimizations.
+Transform website from technical documentation into a 10/10 consumer product landing page with 3-second comprehension, 14-stage user journey, authentic flagship Android device mockup, 6 core consumer benefit cards, collapsible 'Built for Android' deep-dive, 10 prioritized FAQs, and 0 accessibility/hierarchy regressions.
 
 ## COMPLETED_TASKS
-1. **Direct APK Canonical Download Verification**:
-   - Verified physical APK at `public/downloads/SwipePix-1.0.0.apk`: 4,486,854 bytes (~4.28 MB), SHA-256 `0c2656105ccc884be70a493555643099ce63f28264070ad99a9866b03e48a3cb`.
-   - Unified global configuration in `src/config/download.ts` and `src/config/swipepix.ts`.
-   - All download triggers across Navbar, Mobile Drawer, Hero Section, How It Works, Download CTA, Updates Page, and Footer point to `/downloads/SwipePix-1.0.0.apk` with `download="SwipePix-1.0.0.apk"`.
-   - Zero `file:///` URLs, zero `localhost` URLs in production source.
-   - Primary CTA standardized to "Download SwipePix" / "DOWNLOAD SWIPEPIX". GitHub Releases removed as primary download path while preserving repository links for source code and issues.
-2. **Button Accessible Name & Discernible Text Remediation**:
-   - Fixed the disabled Undo button in `SwipeInteractiveDemo.tsx` flagged by Lighthouse (`<button class="btn-brutal-base ... " disabled="">`): added visible text `UNDO`, `aria-label="Undo last swipe"`, and `aria-hidden="true"` on SVG icon.
-   - Audited all buttons across all 6 pre-rendered routes via `scripts/verify_accessibility_qa.cjs`: **0 unnamed buttons found**.
-   - Added `aria-expanded` and `aria-controls="mobile-navigation-drawer"` to the mobile hamburger toggle.
-3. **WCAG AA Color Contrast Compliance**:
-   - `ANDROID UTILITY` & `CREATOR PROFILE` badges: updated `NeoBadge` primary variant to `bg-[#1D4ED8] text-white` (6.5:1 contrast against white).
-   - `IMG_2026_0916.JPG`: updated from `text-primary` to `text-blue-800` (8.5:1 contrast against white).
-   - `← TRASH`: updated to `text-ink bg-warm font-bold border border-ink` (7.8:1 contrast).
-   - `94% FULL`: updated to `text-rose-900 bg-rose-100 font-bold px-1.5 py-0.5 border border-ink` (7.6:1 contrast).
-   - `58% USED`: updated to `text-blue-900 bg-blue-100 font-bold px-1.5 py-0.5 border border-ink` (10.5:1 contrast).
-   - Subtitle, helper text, and metadata labels: raised `text-gray-500` to `text-gray-700 font-bold` across all forms, matrices, and footers.
-4. **Heading Hierarchy Sequencing (H1 -> H2 -> H3)**:
-   - Fixed `PHYSICAL DISK ISOLATION` in `PrivacySection.tsx` from `h4` to `h3`.
-   - Fixed `PRODUCT`, `TRUST & SAFETY`, `COMMUNITY` in `Footer.tsx` from `h4` to `h3`.
-   - Fixed `HowItWorksSection.tsx` contract banner from `h4` to `h3`.
-   - Fixed `SwipeInteractiveDemo.tsx` instructional headings from `h4` to `<p>` tags.
-   - Added missing `h2` headings in `DonatePage.tsx` (`HOW DO YOU WANT TO SUPPORT?`), `UpdatesPage.tsx` (`VERSION 1.0.0`, `HOW TO INSTALL SWIPEPIX VIA APK`), and `FeedbackPage.tsx` (`CHOOSE YOUR FEEDBACK CHANNEL`, `DIRECT FEEDBACK FORM`).
-   - Verified automated heading sequential descent: **0 skipped levels across all 6 routes**.
-5. **Performance & JavaScript Optimization**:
-   - Implemented manual chunk code-splitting in `vite.config.ts`: separated `qrcode` (25.4 KB) and `lucide-react` (37.5 KB) from main entry chunk, reducing core bundle size from 421.5 KB to 360.3 KB.
-   - Streamlined Google Fonts stylesheet request in `index.html`: removed unused italic weights from Space Mono (`Space Mono:wght@400;700`), halving font stylesheet footprint.
-6. **SEO & Structured Data Integrity**:
-   - Maintained 100% valid Schema.org `SoftwareApplication` and `WebSite` JSON-LD graph.
-   - Pre-rendered distinct canonical tags, meta titles, descriptions, and Open Graph tags across `/`, `/donate`, `/updates`, `/privacy`, `/about`, `/feedback`.
+1. **Metadata & Title Upgrades**:
+   - Homepage title: `SwipePix — Offline Android Gallery Cleaner`.
+   - Description: `Clean your Android gallery faster with SwipePix. Swipe to keep or trash photos and videos with offline, local-first processing.`.
+   - Synchronized across `index.html`, `scripts/prerender.js`, and `src/App.tsx`.
+2. **Hero & Phone Mockup**:
+   - Eyebrow: `PRIVATE • OFFLINE • ANDROID`.
+   - Headline: `Clean your gallery. One swipe at a time.`.
+   - 4 Trust Pills: `No account` • `Works offline` • `No cloud uploads` • `Android 13+`.
+   - CTAs: `Download SwipePix` (`/downloads/SwipePix-1.0.0.apk`) + `Try the interactive demo` (`#demo`).
+   - Phone Mockup (`RetroPhoneSvg.tsx`): Realistic flagship Android device mockup featuring punch-hole camera, status bar, glowing Keep (green neon) and Trash cues, and bottom gesture bar.
+3. **3-Step Workflow & Interactive Demo**:
+   - `HowItWorksSection.tsx`: Reorganized to 3 steps: `01 — Pick` → `02 — Swipe` → `03 — Confirm`.
+   - `SwipeInteractiveDemo.tsx`: Header `Clean your gallery like this.`, live status counter `TRASHED X · KEPT Y · Z REMAINING`, pointer/touch drag physics, and disclaimer `Interactive demo only. Your files are not affected.`.
+4. **Consumer Core Benefit Cards & Feature Matrix**:
+   - `FeatureGridSection.tsx`: Showcases 6 consumer core benefit cards first (Swipe Cleaning, Photos & Videos, Batch Multi-Select, Instant Real-Time Undo, Save & Resume, Native Android Trash).
+   - Detailed tabbed matrix below for comprehensive technical feature specs and roadmap.
+5. **Privacy & Safety Realignment**:
+   - `PrivacySection.tsx`: Headline `Your photos stay on your phone.`, 4 clear pillars (`NO INTERNET PERMISSION`, `NO CLOUD UPLOADS`, `NO TRACKERS`, `LOCAL PROCESSING`), zero local filesystem paths in code proof.
+   - `SafetySection.tsx`: Rewrote subtitle to factual claim without exaggeration: "SwipePix uses an undo flow and Android's native trash confirmation to reduce accidental deletion risk."
+6. **New Conversion & Trust Sections**:
+   - `InstallationSection.tsx`: Compact 3-step guide (`Download` → `Allow Installation` → `Open & Start Cleaning`) plus expandable troubleshooting accordion for Samsung, Pixel, and Xiaomi devices.
+   - `OpenSourceSection.tsx`: `Built openly.` with buttons for GitHub source, bug report (`/feedback`), and feature requests.
+   - `TechStackSection.tsx`: `Built for Android.` with collapsible interactive accordions for Architecture, Performance, MediaStore, Video Engine, and Privacy.
+   - `FaqSection.tsx`: 10 prioritized questions in clean accessible accordions.
+   - `DownloadCtaSection.tsx`: `Ready to clean your gallery?` mid-page conversion section.
+7. **Accessibility & Build Verification**:
+   - `npm test`: 18 tests passing.
+   - `npm run build`: successful SSG build and pre-rendering for all 6 routes.
+   - `node scripts/verify_accessibility_qa.cjs`: **0 heading hierarchy errors, 0 unnamed buttons** across all routes.
+   - Zero local/file paths found in distribution.
 
 ## NEXT_TASK
-Deploy production release to hosting CDN and verify live endpoints.
+Ready for deployment to production.
 
 ## ARCHITECTURE_DECISIONS
 - Single Source of Truth: All download and version metadata defined strictly in `src/config/download.ts`.

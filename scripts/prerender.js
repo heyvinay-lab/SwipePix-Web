@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -17,8 +17,8 @@ const { render } = await import('../dist-ssr/entry-server.js');
 
 const ROUTE_METADATA = {
   '/': {
-    title: 'SwipePix — Privacy-First Android Gallery Cleanup',
-    description: 'SwipePix is a privacy-first Android gallery cleanup app for reviewing and organizing photos locally, without cloud uploads.',
+    title: 'SwipePix — Offline Android Gallery Cleaner',
+    description: 'Clean your Android gallery faster with SwipePix. Swipe to keep or trash photos and videos with offline, local-first processing.',
     canonical: 'https://swipepix.heyvinay.in/',
   },
   '/donate': {

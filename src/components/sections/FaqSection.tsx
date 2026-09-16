@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { SectionHeader } from '../common/SectionHeader';
-import { websiteData } from '../../data/websiteData';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export const FaqSection: React.FC = () => {
-  const [openIndices, setOpenIndices] = useState<number[]>([0, 1, 2]); // First three open by default
+  const [openIndices, setOpenIndices] = useState<number[]>([0, 1]); // First two open by default
 
   const toggleAccordion = (index: number) => {
     if (openIndices.includes(index)) {
@@ -13,6 +12,49 @@ export const FaqSection: React.FC = () => {
       setOpenIndices([...openIndices, index]);
     }
   };
+
+  const prioritizedFaqs = [
+    {
+      question: 'Is SwipePix free?',
+      answer: 'Yes. SwipePix is 100% free with zero ads, subscriptions, or locked features. If SwipePix helps you reclaim storage, voluntary support can be given via GitHub Sponsors or UPI on our Donate page.',
+    },
+    {
+      question: 'Does SwipePix upload my photos?',
+      answer: 'No. Not a single byte of your photos or metadata ever leaves your phone. All media indexing, thumbnail caching, and swipe decisions stay strictly on your local device.',
+    },
+    {
+      question: 'Does SwipePix work offline?',
+      answer: 'Yes, completely offline. SwipePix does not request or declare the android.permission.INTERNET permission in its manifest. The Android system restricts the app from making any network connections.',
+    },
+    {
+      question: 'What happens when I swipe left?',
+      answer: 'Swiping left does NOT delete the photo immediately. It stages the file as TRASH_PENDING in a local SQLite table. Only when you finish your session or batch-trash does Android’s official system prompt appear for confirmation.',
+    },
+    {
+      question: 'Can I undo an accidental swipe?',
+      answer: 'Yes. Every swipe can be reversed instantly by tapping the floating Undo button during your session. The photo immediately snaps back onto your deck and its pending state is removed.',
+    },
+    {
+      question: 'Can I clean videos as well as photos?',
+      answer: 'Yes. SwipePix includes a unified in-app video engine. You can watch clips, seek with the precision scrubber, mute audio, and swipe right to keep or left to trash directly inside the deck.',
+    },
+    {
+      question: 'Can I clean specific albums?',
+      answer: 'Yes. You can target your entire camera roll or isolate heavy folders like WhatsApp Media, Screenshots, or Downloads to declutter specific sources without touching others.',
+    },
+    {
+      question: 'What Android versions are supported?',
+      answer: 'SwipePix supports Android 13 (API 33), Android 14 (API 34), and Android 15 (API 35). Android 12 and below are unsupported because they lack modern Scoped Storage and granular media permissions.',
+    },
+    {
+      question: 'Why is SwipePix distributed as a direct APK?',
+      answer: 'Distributing directly via verified APK lets us deliver fast, independent, privacy-first software without third-party store telemetry, account requirements, or artificial commercial constraints.',
+    },
+    {
+      question: 'Is SwipePix open source?',
+      answer: 'Yes. SwipePix is developed openly under the Apache 2.0 license. The full codebase, issue tracker, and release binaries are hosted transparently on GitHub.',
+    },
+  ];
 
   return (
     <section id="faq" className="py-20 bg-bg border-b-3 border-ink">
@@ -25,7 +67,7 @@ export const FaqSection: React.FC = () => {
         />
 
         <div className="space-y-4">
-          {websiteData.faq.map((item, idx) => {
+          {prioritizedFaqs.map((item, idx) => {
             const isOpen = openIndices.includes(idx);
             return (
               <div

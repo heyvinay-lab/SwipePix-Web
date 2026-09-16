@@ -8,10 +8,10 @@ export const SafetySection: React.FC = () => {
     <section id="safety" className="py-20 bg-white border-b-3 border-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          tag="ZERO SILENT DELETIONS"
+          tag="DELETION SAFETY"
           tagVariant="warm"
           title="HOW SWIPEPIX PROTECTS YOUR PHOTOS"
-          subtitle="A 4-stage pipeline that guarantees you never lose a memory by accident."
+          subtitle="SwipePix uses an undo flow and Android's native trash confirmation to reduce accidental deletion risk."
         />
 
         {/* The 5-Step Visual Safety Pipeline */}
