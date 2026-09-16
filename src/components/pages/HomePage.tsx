@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { HeroSection } from '../hero/HeroSection';
 import { ProblemSection } from '../sections/ProblemSection';
 import { HowItWorksSection } from '../sections/HowItWorksSection';
@@ -9,6 +9,7 @@ import { PrivacySection } from '../sections/PrivacySection';
 import { PerformanceSection } from '../sections/PerformanceSection';
 import { TechStackSection } from '../sections/TechStackSection';
 import { FaqSection } from '../sections/FaqSection';
+import { CommunityFeedbackSection } from '../sections/CommunityFeedbackSection';
 import { DownloadCtaSection } from '../sections/DownloadCtaSection';
 
 interface HomePageProps {
@@ -20,7 +21,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     <div className="space-y-0">
       <HeroSection onNavigate={onNavigate} />
       <ProblemSection />
-      <HowItWorksSection />
+      <HowItWorksSection onNavigate={onNavigate} />
       
       {/* Interactive Swipe Demo Stage */}
       <section className="py-20 bg-bg border-b-3 border-ink">
@@ -35,6 +36,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <PerformanceSection />
       <TechStackSection />
       <FaqSection />
+      <CommunityFeedbackSection onNavigate={onNavigate} />
       <DownloadCtaSection onNavigate={onNavigate} />
     </div>
   );

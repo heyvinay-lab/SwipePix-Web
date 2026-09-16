@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeader } from '../common/SectionHeader';
 import { BrutalistButton } from '../common/BrutalistButton';
 import { SWIPEPIX_CONFIG } from '../../config/swipepix';
-import { Send, Copy, Check, MessageSquare } from 'lucide-react';
+import { Send, Copy, Check, MessageSquare, Github, ExternalLink } from 'lucide-react';
 
 export const FeedbackPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -69,7 +69,56 @@ ${formData.message}`;
           subtitle="Encountered an issue or have an idea to make gallery triage faster? We read every submission."
         />
 
-        <div className="card-brutal bg-white p-6 sm:p-10 shadow-brutal-lg">
+        {/* Dual Channel Choice */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="card-brutal bg-white p-6 shadow-brutal flex flex-col justify-between space-y-4">
+            <div className="space-y-2">
+              <span className="font-mono text-[10px] bg-accent text-ink px-2 py-0.5 border border-ink font-bold uppercase">
+                RECOMMENDED FOR BUGS & FEATURES
+              </span>
+              <h3 className="font-mono text-base font-bold text-ink uppercase flex items-center gap-2">
+                <Github className="w-4 h-4 text-primary" /> GitHub Issues Tracker
+              </h3>
+              <p className="font-sans text-xs text-gray-700 leading-relaxed">
+                Publicly track bug reports, view issue templates, upvote feature suggestions, and follow fixes directly on the official repository.
+              </p>
+            </div>
+            <BrutalistButton
+              variant="accent"
+              size="sm"
+              asLink={true}
+              href={`${SWIPEPIX_CONFIG.githubRepoUrl}/issues/new/choose`}
+              external={true}
+              className="text-xs font-bold w-full sm:w-auto"
+            >
+              <Github className="w-3.5 h-3.5 mr-1.5 inline" />
+              Open GitHub Issue
+              <ExternalLink className="w-3 h-3 ml-1.5 inline opacity-75" />
+            </BrutalistButton>
+          </div>
+
+          <div className="card-brutal bg-white p-6 shadow-brutal flex flex-col justify-between space-y-4">
+            <div className="space-y-2">
+              <span className="font-mono text-[10px] bg-bg text-ink px-2 py-0.5 border border-ink font-bold uppercase">
+                PRIVATE & DIRECT
+              </span>
+              <h3 className="font-mono text-base font-bold text-ink uppercase flex items-center gap-2">
+                <MessageSquare className="w-4 h-4 text-primary" /> Direct Email
+              </h3>
+              <p className="font-sans text-xs text-gray-700 leading-relaxed">
+                Prefer private communication or don't have a GitHub account? Use the form below to send structured feedback directly to <code>hey@heyvinay.in</code>.
+              </p>
+            </div>
+            <a
+              href="#email-form"
+              className="font-mono text-xs font-bold text-primary hover:underline flex items-center gap-1"
+            >
+              Fill out email form below ↓
+            </a>
+          </div>
+        </div>
+
+        <div id="email-form" className="card-brutal bg-white p-6 sm:p-10 shadow-brutal-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Top Notice */}
             <div className="p-4 bg-lime-50 border-2 border-ink flex items-start gap-3">

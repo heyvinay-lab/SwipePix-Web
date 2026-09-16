@@ -1,9 +1,15 @@
 import React from 'react';
 import { SectionHeader } from '../common/SectionHeader';
 import { NeoBadge } from '../common/NeoBadge';
-import { FolderCheck, MoveRight, BookmarkCheck, ShieldAlert } from 'lucide-react';
+import { BrutalistButton } from '../common/BrutalistButton';
+import { FolderCheck, MoveRight, BookmarkCheck, ShieldAlert, Download } from 'lucide-react';
+import { DOWNLOAD_CONFIG } from '../../config/download';
 
-export const HowItWorksSection: React.FC = () => {
+interface HowItWorksSectionProps {
+  onNavigate?: (path: string) => void;
+}
+
+export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
   const steps = [
     {
       num: '01',
@@ -102,9 +108,22 @@ export const HowItWorksSection: React.FC = () => {
               Files are physically untouched on your device until you finish your session or confirm batch trashing via Android’s native platform modal.
             </p>
           </div>
-          <NeoBadge variant="warm" rotate="2" className="text-xs px-3 py-1.5 shadow-brutal-sm shrink-0">
-            30-DAY RESTORE GUARANTEE
-          </NeoBadge>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <NeoBadge variant="warm" rotate="2" className="text-xs px-3 py-1.5 shadow-brutal-sm">
+              30-DAY RESTORE GUARANTEE
+            </NeoBadge>
+            <BrutalistButton
+              variant="accent"
+              size="sm"
+              asLink={true}
+              href={DOWNLOAD_CONFIG.apkUrl}
+              download="SwipePix-1.0.0.apk"
+              className="text-xs font-bold whitespace-nowrap"
+            >
+              <Download className="w-4 h-4 mr-1.5 inline" />
+              Download APK
+            </BrutalistButton>
+          </div>
         </div>
       </div>
     </section>

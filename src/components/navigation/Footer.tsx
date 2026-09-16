@@ -59,13 +59,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </h4>
             <ul className="space-y-2.5 font-mono text-xs">
               <li>
-                <a href="/updates" onClick={(e) => handleNav(e, '/updates')} className="text-gray-300 hover:text-white transition-colors">
-                  Download APK v1.0
+                <a href="/downloads/SwipePix-1.0.0.apk" download="SwipePix-1.0.0.apk" className="text-gray-300 hover:text-white transition-colors">
+                  Download APK v1.0.0
                 </a>
               </li>
               <li>
                 <a href="/updates" onClick={(e) => handleNav(e, '/updates')} className="text-gray-300 hover:text-white transition-colors">
                   Release Notes
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/heyvinay-lab/SwipePix/releases" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
+                  GitHub Releases <ExternalLink className="w-3 h-3 text-gray-500" />
                 </a>
               </li>
               <li>
@@ -127,23 +132,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </a>
               </li>
               <li>
+                <a href="https://github.com/heyvinay-lab/SwipePix/issues" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
+                  GitHub Issues <ExternalLink className="w-3 h-3 text-gray-500" />
+                </a>
+              </li>
+              <li>
                 <a href="/donate" onClick={(e) => handleNav(e, '/donate')} className="text-gray-300 hover:text-white transition-colors">
                   Support Development
                 </a>
               </li>
               <li>
-                <a href="/about" onClick={(e) => handleNav(e, '/about')} className="text-gray-300 hover:text-white transition-colors">
-                  About the Project
+                <a href="https://github.com/sponsors/heyvinay-lab" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
+                  GitHub Sponsors <ExternalLink className="w-3 h-3 text-gray-500" />
                 </a>
               </li>
               <li>
-                <a
-                  href="https://heyvinay.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1 text-primary"
-                >
-                  heyvinay.in <ExternalLink className="w-3 h-3" />
+                <a href="/about" onClick={(e) => handleNav(e, '/about')} className="text-gray-300 hover:text-white transition-colors">
+                  About the Project
                 </a>
               </li>
             </ul>

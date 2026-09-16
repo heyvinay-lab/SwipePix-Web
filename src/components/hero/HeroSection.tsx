@@ -88,10 +88,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 size="lg"
                 asLink={true}
                 href={DOWNLOAD_CONFIG.apkUrl}
-                download="SwipePix-1.0.0.apk"
-                className="text-base"
+                download={DOWNLOAD_CONFIG.fileName}
+                aria-label={`Download SwipePix APK v${DOWNLOAD_CONFIG.version}`}
+                className="text-base font-bold shadow-brutal"
               >
-                <Download className="w-5 h-5 mr-2 text-ink" /> DOWNLOAD APK v{DOWNLOAD_CONFIG.version}
+                <Download className="w-5 h-5 mr-2 text-ink" /> DOWNLOAD SWIPEPIX
               </BrutalistButton>
 
               <BrutalistButton

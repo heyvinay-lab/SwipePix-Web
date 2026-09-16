@@ -21,7 +21,10 @@ export interface SwipePixConfig {
   targetSdk: number;
   compileSdk: number;
   supportedAndroidVersions: string[];
-  apkDownloadUrl: string | null; // direct asset URL
+  apkDownloadUrl: string; // direct canonical asset URL
+  fileSizeBytes: number;
+  fileSizeFormatted: string;
+  sha256Checksum: string;
   githubRepoUrl: string;
   githubReleaseUrl: string;
   developerWebsite: string;
@@ -44,6 +47,9 @@ export const SWIPEPIX_CONFIG: SwipePixConfig = {
   supportedAndroidVersions: ['Android 13 (API 33)', 'Android 14 (API 34)', 'Android 15 (API 35)'],
   // Direct APK URL from centralized download config
   apkDownloadUrl: DOWNLOAD_CONFIG.apkUrl,
+  fileSizeBytes: DOWNLOAD_CONFIG.fileSizeBytes,
+  fileSizeFormatted: DOWNLOAD_CONFIG.fileSizeFormatted,
+  sha256Checksum: DOWNLOAD_CONFIG.sha256,
   githubRepoUrl: 'https://github.com/heyvinay-lab/SwipePix',
   githubReleaseUrl: 'https://github.com/heyvinay-lab/SwipePix/releases',
   developerWebsite: 'https://portfolio.heyvinay.in/',

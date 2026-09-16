@@ -135,13 +135,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
             size="sm"
             asLink={true}
             href={DOWNLOAD_CONFIG.apkUrl}
-            download="SwipePix-1.0.0.apk"
-            title={`Download SwipePix v${DOWNLOAD_CONFIG.version} APK`}
+            download={DOWNLOAD_CONFIG.fileName}
+            title={`Download SwipePix v${DOWNLOAD_CONFIG.version} APK (${DOWNLOAD_CONFIG.fileSizeFormatted})`}
             aria-label="Download SwipePix APK"
             className="text-xs font-bold px-3 py-1.5"
           >
             <Download className="w-3.5 h-3.5 mr-1 text-ink inline" />
-            Download
+            Download SwipePix
           </BrutalistButton>
         </div>
 
@@ -159,65 +159,70 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t-3 border-ink bg-white p-4 shadow-brutal-lg animate-in slide-in-from-top-2">
-          <div className="flex flex-col gap-2 font-mono font-bold text-sm uppercase">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="p-2.5 border-2 border-ink bg-bg hover:bg-primary-light transition-colors flex items-center justify-between"
-              >
-                <span>{link.label}</span>
-                <span className="text-xs text-gray-400">→</span>
-              </a>
-            ))}
-
-            {/* Mobile Support & Action Section */}
-            <div className="pt-3 mt-1 border-t-2 border-dashed border-gray-300 flex flex-col gap-2.5">
-              <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider font-bold">
-                Support & Actions
-              </span>
-
-              <BrutalistButton
-                variant="white"
-                size="md"
-                className="w-full justify-center text-xs font-bold"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onNavigate('/feedback');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-              >
-                <MessageSquare className="w-4 h-4 mr-2 text-primary shrink-0" />
-                Send Feedback & Bugs
-              </BrutalistButton>
-
-              <BrutalistButton
-                variant="warm"
-                size="md"
-                className="w-full justify-center text-xs font-bold"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onNavigate('/donate');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-              >
-                <Heart className="w-4 h-4 mr-2 text-ink fill-ink/20 shrink-0" />
-                Support Development
-              </BrutalistButton>
-
+          <div className="flex flex-col gap-3 font-mono font-bold text-sm uppercase">
+            {/* Top Priority Mobile Action CTAs */}
+            <div className="flex flex-col gap-2 pb-3 border-b-2 border-dashed border-gray-300">
               <BrutalistButton
                 variant="accent"
                 size="md"
                 asLink={true}
                 href={DOWNLOAD_CONFIG.apkUrl}
-                download="SwipePix-1.0.0.apk"
-                className="w-full justify-center text-xs font-bold"
+                download={DOWNLOAD_CONFIG.fileName}
+                aria-label={`Download SwipePix APK v${DOWNLOAD_CONFIG.version}`}
+                className="w-full justify-center text-xs font-bold py-2.5 shadow-brutal"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Download className="w-4 h-4 mr-2 text-ink shrink-0" />
-                Download APK v{DOWNLOAD_CONFIG.version}
+                Download SwipePix
               </BrutalistButton>
+
+              <div className="grid grid-cols-2 gap-2">
+                <BrutalistButton
+                  variant="white"
+                  size="sm"
+                  className="w-full justify-center text-[11px] font-bold py-2"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onNavigate('/feedback');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  <MessageSquare className="w-3.5 h-3.5 mr-1 text-primary shrink-0" />
+                  Feedback
+                </BrutalistButton>
+
+                <BrutalistButton
+                  variant="warm"
+                  size="sm"
+                  className="w-full justify-center text-[11px] font-bold py-2"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onNavigate('/donate');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  <Heart className="w-3.5 h-3.5 mr-1 text-ink fill-ink/20 shrink-0" />
+                  Support
+                </BrutalistButton>
+              </div>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="flex flex-col gap-1.5">
+              <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider font-bold mb-1">
+                Navigation
+              </span>
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className="p-2.5 border-2 border-ink bg-bg hover:bg-primary-light transition-colors flex items-center justify-between"
+                >
+                  <span>{link.label}</span>
+                  <span className="text-xs text-gray-400">→</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>

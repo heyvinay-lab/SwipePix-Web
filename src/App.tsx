@@ -54,7 +54,7 @@ export function App() {
   const renderCurrentPage = () => {
     switch (currentPath) {
       case '/updates':
-        return <UpdatesPage />;
+        return <UpdatesPage onNavigate={handleNavigate} />;
       case '/donate':
         return <DonatePage />;
       case '/feedback':

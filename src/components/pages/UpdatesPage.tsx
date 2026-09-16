@@ -4,9 +4,13 @@ import { BrutalistCard } from '../common/BrutalistCard';
 import { BrutalistButton } from '../common/BrutalistButton';
 import { NeoBadge } from '../common/NeoBadge';
 import { SWIPEPIX_CONFIG } from '../../config/swipepix';
-import { Download, CheckCircle, Github, ShieldCheck, Terminal } from 'lucide-react';
+import { Download, CheckCircle, Github, ShieldCheck, Terminal, Bug, Heart } from 'lucide-react';
 
-export const UpdatesPage: React.FC = () => {
+interface UpdatesPageProps {
+  onNavigate?: (path: string) => void;
+}
+
+export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
   const releaseNotes = [
     'Initial production stable release for modern Android (13, 14, 15).',
     'Unified In-App Video Player System: Native playback in both fullscreen viewer and cleaning card deck with tactile seek scrubber, mute controls, and "Open with" system player fallback.',
@@ -141,6 +145,69 @@ export const UpdatesPage: React.FC = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Release Feedback & Support Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 bg-white border-3 border-ink shadow-brutal flex flex-col justify-between space-y-4">
+            <div className="space-y-2">
+              <span className="font-mono text-[10px] bg-amber-100 text-ink px-2 py-0.5 border border-ink font-bold uppercase">
+                QUALITY ASSURANCE
+              </span>
+              <h4 className="font-mono text-base font-bold text-ink uppercase">
+                Found something wrong with this release?
+              </h4>
+              <p className="font-sans text-xs text-gray-700 leading-relaxed">
+                Help us squash it. Report any regression, crash, or unexpected behavior on Android 13-15.
+              </p>
+            </div>
+            <BrutalistButton
+              variant="white"
+              size="sm"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('/feedback');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                  window.location.href = '/feedback';
+                }
+              }}
+              className="text-xs font-bold w-full sm:w-auto"
+            >
+              <Bug className="w-3.5 h-3.5 mr-1.5 text-warm" />
+              Report a Bug
+            </BrutalistButton>
+          </div>
+
+          <div className="p-6 bg-lime-100 border-3 border-ink shadow-brutal flex flex-col justify-between space-y-4">
+            <div className="space-y-2">
+              <span className="font-mono text-[10px] bg-white text-ink px-2 py-0.5 border border-ink font-bold uppercase">
+                VOLUNTARY PATRONAGE
+              </span>
+              <h4 className="font-mono text-base font-bold text-ink uppercase">
+                Support Independent Maintenance
+              </h4>
+              <p className="font-sans text-xs text-gray-800 leading-relaxed">
+                SwipePix is completely free with zero ads. Help support test devices and continued improvements.
+              </p>
+            </div>
+            <BrutalistButton
+              variant="warm"
+              size="sm"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('/donate');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                  window.location.href = '/donate';
+                }
+              }}
+              className="text-xs font-bold w-full sm:w-auto"
+            >
+              <Heart className="w-3.5 h-3.5 mr-1.5 text-ink fill-ink/20" />
+              Support Development
+            </BrutalistButton>
           </div>
         </div>
 
