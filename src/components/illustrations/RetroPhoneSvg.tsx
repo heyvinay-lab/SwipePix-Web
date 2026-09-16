@@ -31,8 +31,8 @@ export const RetroPhoneSvg: React.FC<RetroPhoneSvgProps> = ({ className = 'w-ful
           <div className="relative z-10 bg-white border-2 border-ink rounded-lg p-3 shadow-brutal-sm flex-1 flex flex-col justify-between -rotate-1">
             {/* Card Header */}
             <div className="flex justify-between items-center border-b border-ink pb-1 text-xs font-mono">
-              <span className="font-bold text-primary">IMG_2026_0916.JPG</span>
-              <span className="bg-gray-100 px-1 border border-ink text-[10px]">12.4 MB</span>
+              <span className="font-bold text-blue-800">IMG_2026_0916.JPG</span>
+              <span className="bg-gray-100 px-1 border border-ink text-[10px] font-bold text-ink">12.4 MB</span>
             </div>
 
             {/* Photo Illustration Inside Card */}
@@ -42,17 +42,17 @@ export const RetroPhoneSvg: React.FC<RetroPhoneSvgProps> = ({ className = 'w-ful
                 <polygon points="0,60 30,25 55,45 75,20 100,60" fill="#2F6BFF" stroke="#050505" strokeWidth="2" />
                 <polygon points="40,60 65,35 85,50 100,60" fill="#8B5CF6" stroke="#050505" strokeWidth="2" />
               </svg>
-              <span className="absolute bottom-1 right-2 text-[9px] font-mono bg-white px-1 border border-ink">
+              <span className="absolute bottom-1 right-2 text-[9px] font-mono bg-white px-1 border border-ink font-bold text-ink">
                 CAMERA ROLL
               </span>
             </div>
 
             {/* Gesture Guide Arrow Prompts */}
             <div className="flex justify-between items-center pt-1 font-mono text-[11px] font-bold">
-              <span className="text-warm bg-pink-50 px-1.5 py-0.5 border border-ink">
+              <span className="text-ink bg-warm px-1.5 py-0.5 border border-ink font-bold">
                 ← TRASH
               </span>
-              <span className="text-accent bg-black text-white px-1.5 py-0.5 border border-ink">
+              <span className="text-ink bg-accent px-1.5 py-0.5 border border-ink font-bold">
                 KEEP →
               </span>
             </div>

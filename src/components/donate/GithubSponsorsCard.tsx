@@ -16,7 +16,7 @@ export const GithubSponsorsCard: React.FC = () => {
             <NeoBadge variant="secondary" rotate="-1">
               INTERNATIONAL & OPEN SOURCE
             </NeoBadge>
-            <span className="font-mono text-xs text-gray-500 font-bold hidden sm:inline">
+            <span className="font-mono text-xs text-gray-700 font-bold hidden sm:inline">
               // RECURRING OR ONE-TIME
             </span>
           </div>
@@ -80,9 +80,9 @@ export const GithubSponsorsCard: React.FC = () => {
         {/* Right: Badge Stamp Callout */}
         <div className="md:col-span-4 p-5 bg-purple-50 border-2 border-ink shadow-brutal-sm text-center space-y-2">
           <Heart className="w-8 h-8 text-warm fill-warm mx-auto" />
-          <h4 className="font-mono text-xs font-bold uppercase text-ink">
+          <p className="font-mono text-xs font-bold uppercase text-ink">
             OPEN SOURCE ADVOCATE
-          </h4>
+          </p>
           <p className="font-sans text-[11px] text-gray-600">
             Sponsorships are directly managed by GitHub's secure infrastructure under <code>heyvinay-lab</code>.
           </p>

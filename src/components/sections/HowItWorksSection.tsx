@@ -87,7 +87,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
                 </div>
 
                 {/* Bottom Connection Wire */}
-                <div className="pt-2 border-t border-dashed border-gray-400 text-[10px] font-mono font-bold text-gray-500 uppercase">
+                <div className="pt-2 border-t border-dashed border-gray-400 text-[10px] font-mono font-bold text-gray-700 uppercase">
                   STEP {idx + 1} OF 4
                 </div>
               </div>
@@ -101,9 +101,9 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
             <span className="font-mono text-xs font-bold text-ink bg-white px-2 py-0.5 border border-ink uppercase">
               CRITICAL PRIVACY & SAFETY CONTRACT
             </span>
-            <h4 className="font-mono text-lg font-bold text-ink">
+            <h3 className="font-mono text-lg font-bold text-ink">
               SWIPE LEFT OR BATCH SELECT = STAGED IN DATABASE • ZERO SILENT DELETION
-            </h4>
+            </h3>
             <p className="font-sans text-xs text-gray-800 max-w-2xl">
               Files are physically untouched on your device until you finish your session or confirm batch trashing via Android’s native platform modal.
             </p>

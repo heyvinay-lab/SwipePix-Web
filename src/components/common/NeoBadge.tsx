@@ -16,8 +16,8 @@ export const NeoBadge: React.FC<NeoBadgeProps> = ({
   const variantStyles = {
     accent: 'bg-accent text-ink border-ink',
     warm: 'bg-warm text-ink border-ink',
-    primary: 'bg-primary text-white border-ink',
-    secondary: 'bg-secondary text-white border-ink',
+    primary: 'bg-[#1D4ED8] text-white border-ink',
+    secondary: 'bg-[#6D28D9] text-white border-ink',
     white: 'bg-white text-ink border-ink',
     dark: 'bg-dark text-white border-white',
   };

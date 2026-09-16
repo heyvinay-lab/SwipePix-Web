@@ -11,6 +11,18 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    assetsInlineLimit: 4096
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/qrcode')) {
+            return 'qrcode';
+          }
+          if (id.includes('node_modules/lucide-react')) {
+            return 'lucide';
+          }
+        }
+      }
+    }
   }
 });

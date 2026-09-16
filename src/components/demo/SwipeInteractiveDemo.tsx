@@ -144,8 +144,8 @@ export const SwipeInteractiveDemo: React.FC = () => {
             <NeoBadge variant="warm" rotate="-1">
               TRY IT YOURSELF
             </NeoBadge>
-            <span className="font-mono text-xs text-gray-500 font-bold hidden sm:inline">
-              // INTERACTIVE WEB PROTOTYPE
+            <span className="font-mono text-xs text-gray-700 font-bold hidden sm:inline">
+              [ REAL-TIME ENGINE DEMO ]
             </span>
           </div>
           <h3 className="font-mono text-2xl font-bold uppercase text-ink mt-1">
@@ -169,9 +169,9 @@ export const SwipeInteractiveDemo: React.FC = () => {
         {/* Left Instruction Panel */}
         <div className="md:col-span-5 space-y-4">
           <div className="p-4 border-2 border-ink bg-bg">
-            <h4 className="font-mono text-sm font-bold uppercase text-primary mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 bg-primary inline-block" /> HOW TO TEST:
-            </h4>
+            <p className="font-mono text-sm font-bold uppercase text-blue-800 mb-2 flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-blue-800 inline-block" /> HOW TO TEST:
+            </p>
             <ul className="font-sans text-xs space-y-2 text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="font-mono font-bold text-accent bg-ink px-1 border border-ink text-[10px]">
@@ -214,7 +214,7 @@ export const SwipeInteractiveDemo: React.FC = () => {
               disabled={!currentCard}
               className="flex-1"
             >
-              <Trash2 className="w-3.5 h-3.5 mr-1" /> ← TRASH
+              <Trash2 className="w-3.5 h-3.5 mr-1" aria-hidden="true" /> ← TRASH
             </BrutalistButton>
 
             <BrutalistButton
@@ -222,9 +222,10 @@ export const SwipeInteractiveDemo: React.FC = () => {
               size="sm"
               onClick={handleUndo}
               disabled={history.length === 0}
-              className="px-3"
+              aria-label="Undo last swipe"
+              className="px-3 font-bold"
             >
-              <RotateCcw className="w-3.5 h-3.5" />
+              <RotateCcw className="w-3.5 h-3.5 mr-1 inline" aria-hidden="true" /> UNDO
             </BrutalistButton>
 
             <BrutalistButton
@@ -234,7 +235,7 @@ export const SwipeInteractiveDemo: React.FC = () => {
               disabled={!currentCard}
               className="flex-1"
             >
-              KEEP → <Check className="w-3.5 h-3.5 ml-1" />
+              KEEP → <Check className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
             </BrutalistButton>
           </div>
         </div>
@@ -335,9 +336,9 @@ export const SwipeInteractiveDemo: React.FC = () => {
                   <div className="w-16 h-16 bg-accent border-3 border-ink rounded-full mx-auto flex items-center justify-center shadow-brutal-sm">
                     <Check className="w-8 h-8 text-ink" />
                   </div>
-                  <h4 className="font-mono text-xl font-bold uppercase text-ink">
+                  <p className="font-mono text-xl font-bold uppercase text-ink">
                     DEMO BATCH COMPLETE!
-                  </h4>
+                  </p>
                   <p className="font-sans text-xs text-gray-600 max-w-xs">
                     You reviewed <strong>{DEMO_CARDS.length} items</strong>. In the real Android app, SwipePix would now present Android's official system confirmation dialog.
                   </p>

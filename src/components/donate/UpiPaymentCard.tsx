@@ -99,7 +99,7 @@ export const UpiPaymentCard: React.FC = () => {
             <NeoBadge variant="accent" rotate="-1">
               FAST & DIRECT
             </NeoBadge>
-            <span className="font-mono text-xs text-gray-500 font-bold hidden sm:inline">
+            <span className="font-mono text-xs text-gray-700 font-bold hidden sm:inline">
               // ZERO INTERMEDIARY FEES
             </span>
           </div>
@@ -120,8 +120,8 @@ export const UpiPaymentCard: React.FC = () => {
 
       {/* Main Grid: Left Controls, Right QR on Desktop */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Column: Amount Selection & Actions */}
-        <div className="lg:col-span-7 space-y-6">
+        {/* Form Controls Column */}
+        <div className="lg:col-span-7 space-y-5">
           {/* Preset Buttons */}
           <div>
             <label className="block font-mono text-xs font-bold uppercase text-ink mb-2">
@@ -172,12 +172,12 @@ export const UpiPaymentCard: React.FC = () => {
               />
             </div>
             {validationError ? (
-              <p className="mt-1.5 font-mono text-xs text-warm font-bold flex items-center gap-1">
+              <p className="mt-1.5 font-mono text-xs text-rose-700 font-bold flex items-center gap-1">
                 <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                 {validationError}
               </p>
             ) : (
-              <p className="mt-1 font-mono text-[11px] text-gray-500">
+              <p className="mt-1 font-mono text-[11px] text-gray-700">
                 Supports ₹{upiConfig.minAmount} to ₹{upiConfig.maxAmount.toLocaleString('en-IN')}. The QR code updates automatically.
               </p>
             )}
@@ -187,7 +187,7 @@ export const UpiPaymentCard: React.FC = () => {
           <div className="p-4 border-2 border-ink bg-bg space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <span className="font-mono text-[10px] text-gray-500 font-bold uppercase block">
+                <span className="font-mono text-[10px] text-gray-700 font-bold uppercase block">
                   OFFICIAL UPI ID
                 </span>
                 <span className="font-mono text-sm sm:text-base font-bold text-ink select-all">
@@ -216,7 +216,7 @@ export const UpiPaymentCard: React.FC = () => {
             </div>
 
             {copyError && (
-              <p className="font-mono text-[11px] text-warm">
+              <p className="font-mono text-[11px] text-rose-700 font-bold">
                 Couldn't auto-copy. Please manually copy {upiConfig.id}
               </p>
             )}
@@ -280,12 +280,12 @@ export const UpiPaymentCard: React.FC = () => {
             {/* Payee Info */}
             <div className="mt-3 font-mono text-xs text-gray-700 space-y-0.5">
               <div className="font-bold text-ink">{upiConfig.payeeName}</div>
-              <div className="text-[11px] text-gray-500">{upiConfig.id}</div>
+              <div className="text-[11px] text-gray-700 font-bold">{upiConfig.id}</div>
             </div>
 
             {/* Supported App Badges */}
             <div className="mt-3 pt-3 border-t border-dashed border-gray-300 w-full">
-              <span className="text-[9px] font-mono uppercase text-gray-500 block mb-1.5">
+              <span className="text-[9px] font-mono uppercase text-gray-700 font-bold block mb-1.5">
                 SUPPORTED UPI APPS:
               </span>
               <div className="flex flex-wrap justify-center gap-1 text-[10px] font-mono font-bold">

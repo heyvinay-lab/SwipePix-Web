@@ -34,7 +34,7 @@ export const DonatePage: React.FC = () => {
             SUPPORT SWIPEPIX.
           </h1>
 
-          <p className="font-mono text-base sm:text-lg font-bold text-primary">
+          <p className="font-mono text-base sm:text-lg font-bold text-blue-800">
             Keep gallery cleanup private, local, and improving.
           </p>
 
@@ -48,7 +48,7 @@ export const DonatePage: React.FC = () => {
               size="md"
               onClick={scrollToPayment}
             >
-              <Heart className="w-4 h-4 mr-2 text-warm fill-warm" /> SUPPORT SWIPEPIX <ArrowDown className="w-4 h-4 ml-1" />
+              <Heart className="w-4 h-4 mr-2 text-rose-600 fill-rose-600" /> SUPPORT SWIPEPIX <ArrowDown className="w-4 h-4 ml-1" />
             </BrutalistButton>
 
             <BrutalistButton
@@ -66,11 +66,11 @@ export const DonatePage: React.FC = () => {
         {/* Payment Method Selector */}
         <div id="payment-section" className="space-y-6 pt-4">
           <div className="border-b-3 border-ink pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-2">
+            <h2 className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-ink flex items-center gap-2">
               <span className="w-2.5 h-2.5 bg-accent border border-ink inline-block" />
               HOW DO YOU WANT TO SUPPORT?
-            </span>
-            <span className="font-mono text-[11px] text-gray-500">
+            </h2>
+            <span className="font-mono text-[11px] text-gray-700 font-bold">
               SELECT YOUR PREFERRED CHANNEL
             </span>
           </div>

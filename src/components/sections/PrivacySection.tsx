@@ -97,9 +97,9 @@ export const PrivacySection: React.FC<PrivacySectionProps> = ({ onNavigate }) =>
             <div className="flex items-center gap-4">
               <FloppyDiskSvg className="w-16 h-16 shrink-0" />
               <div>
-                <h4 className="font-mono text-lg font-bold uppercase text-white">
+                <h3 className="font-mono text-lg font-bold uppercase text-white">
                   PHYSICAL DISK ISOLATION
-                </h4>
+                </h3>
                 <p className="font-sans text-xs text-gray-300 mt-1">
                   Your photos never touch an external server because the app lacks the physical permission to establish a socket.
                 </p>

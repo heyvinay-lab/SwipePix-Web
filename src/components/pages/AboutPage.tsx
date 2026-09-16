@@ -79,18 +79,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           {/* Philosophy Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             <div className="p-4 border-2 border-ink bg-bg">
-              <h4 className="font-mono text-sm font-bold uppercase text-ink flex items-center gap-2 mb-2">
-                <ShieldCheck className="w-4 h-4 text-primary" /> LOCAL-FIRST CRAFT
-              </h4>
+              <h3 className="font-mono text-sm font-bold uppercase text-ink flex items-center gap-2 mb-2">
+                <ShieldCheck className="w-4 h-4 text-blue-700" /> LOCAL-FIRST CRAFT
+              </h3>
               <p className="font-sans text-xs text-gray-700 leading-relaxed">
                 Smartphones are powerful computers. Mobile utilities should run fast and locally on-device without leaking data to cloud servers or imposing recurring subscriptions.
               </p>
             </div>
 
             <div className="p-4 border-2 border-ink bg-bg">
-              <h4 className="font-mono text-sm font-bold uppercase text-ink flex items-center gap-2 mb-2">
-                <Sparkles className="w-4 h-4 text-warm" /> DELIGHTFUL MOTION
-              </h4>
+              <h3 className="font-mono text-sm font-bold uppercase text-ink flex items-center gap-2 mb-2">
+                <Sparkles className="w-4 h-4 text-rose-600" /> DELIGHTFUL MOTION
+              </h3>
               <p className="font-sans text-xs text-gray-700 leading-relaxed">
                 Utility software doesn't need to be dry or sterile. SwipePix combines reactive Android gesture physics with a high-contrast neo-brutalist aesthetic to make curation effortless.
               </p>
@@ -104,9 +104,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <span className="font-mono text-xs font-bold text-ink uppercase bg-white px-2 py-0.5 border border-ink">
               OPEN SOURCE & VOLUNTARY PATRONAGE
             </span>
-            <h4 className="font-mono text-lg font-bold text-ink">
+            <h3 className="font-mono text-lg font-bold text-ink">
               WANT TO SUPPORT INDEPENDENT SOFTWARE?
-            </h4>
+            </h3>
             <p className="font-sans text-xs text-gray-800 max-w-xl">
               SwipePix is 100% free with zero ads. If it helped you clean your storage, consider supporting ongoing development.
             </p>

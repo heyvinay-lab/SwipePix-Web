@@ -104,15 +104,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 TRY INTERACTIVE DEMO
               </BrutalistButton>
 
-              <button
-                onClick={() => {
+              <a
+                href="/updates"
+                onClick={(e) => {
+                  e.preventDefault();
                   onNavigate('/updates');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="font-mono text-xs font-bold uppercase underline hover:text-primary transition-colors flex items-center gap-1 text-ink px-2 py-1"
+                className="font-mono text-xs font-bold uppercase underline hover:text-blue-700 transition-colors flex items-center gap-1 text-ink px-2 py-1"
               >
-                Release Notes & Updates <ArrowDown className="w-3.5 h-3.5 -rotate-90" />
-              </button>
+                Release Notes & Updates <ArrowDown className="w-3.5 h-3.5 -rotate-90" aria-hidden="true" />
+              </a>
             </div>
           </div>
 

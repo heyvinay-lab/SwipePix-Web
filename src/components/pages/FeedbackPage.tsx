@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrutalistButton } from '../common/BrutalistButton';
 import { SWIPEPIX_CONFIG } from '../../config/swipepix';
-import { Send, Copy, Check, MessageSquare, Github, ExternalLink } from 'lucide-react';
+import { Send, Copy, Check, MessageSquare, Github, ExternalLink, ArrowRight } from 'lucide-react';
 
 export const FeedbackPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -63,7 +63,7 @@ ${formData.message}`;
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="mb-3">
-            <span className="font-mono text-xs font-bold uppercase bg-primary text-white px-2.5 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505] inline-block -rotate-1">
+            <span className="font-mono text-xs font-bold uppercase bg-[#1D4ED8] text-white px-2.5 py-1 border-2 border-ink shadow-[2px_2px_0px_#050505] inline-block -rotate-1">
               USER VOICE
             </span>
           </div>
@@ -76,55 +76,63 @@ ${formData.message}`;
         </div>
 
         {/* Dual Channel Choice */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card-brutal bg-white p-6 shadow-brutal flex flex-col justify-between space-y-4">
-            <div className="space-y-2">
-              <span className="font-mono text-[10px] bg-accent text-ink px-2 py-0.5 border border-ink font-bold uppercase">
-                RECOMMENDED FOR BUGS & FEATURES
-              </span>
-              <h3 className="font-mono text-base font-bold text-ink uppercase flex items-center gap-2">
-                <Github className="w-4 h-4 text-primary" /> GitHub Issues Tracker
-              </h3>
-              <p className="font-sans text-xs text-gray-700 leading-relaxed">
-                Publicly track bug reports, view issue templates, upvote feature suggestions, and follow fixes directly on the official repository.
-              </p>
+        <div className="space-y-4">
+          <h2 className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-ink border-b-2 border-ink pb-2">
+            CHOOSE YOUR FEEDBACK CHANNEL
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card-brutal bg-white p-6 shadow-brutal flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="font-mono text-[10px] bg-accent text-ink px-2 py-0.5 border border-ink font-bold uppercase">
+                  RECOMMENDED FOR BUGS & FEATURES
+                </span>
+                <h3 className="font-mono text-base font-bold text-ink uppercase flex items-center gap-2">
+                  <Github className="w-4 h-4 text-blue-700" /> GitHub Issues Tracker
+                </h3>
+                <p className="font-sans text-xs text-gray-700 leading-relaxed">
+                  Publicly track bug reports, view issue templates, upvote feature suggestions, and follow fixes directly on the official repository.
+                </p>
+              </div>
+              <BrutalistButton
+                variant="accent"
+                size="sm"
+                asLink={true}
+                href={`${SWIPEPIX_CONFIG.githubRepoUrl}/issues/new/choose`}
+                external={true}
+                className="text-xs font-bold w-full sm:w-auto"
+              >
+                <Github className="w-3.5 h-3.5 mr-1.5 inline" />
+                Open GitHub Issue
+                <ExternalLink className="w-3 h-3 ml-1.5 inline opacity-75" />
+              </BrutalistButton>
             </div>
-            <BrutalistButton
-              variant="accent"
-              size="sm"
-              asLink={true}
-              href={`${SWIPEPIX_CONFIG.githubRepoUrl}/issues/new/choose`}
-              external={true}
-              className="text-xs font-bold w-full sm:w-auto"
-            >
-              <Github className="w-3.5 h-3.5 mr-1.5 inline" />
-              Open GitHub Issue
-              <ExternalLink className="w-3 h-3 ml-1.5 inline opacity-75" />
-            </BrutalistButton>
-          </div>
 
-          <div className="card-brutal bg-white p-6 shadow-brutal flex flex-col justify-between space-y-4">
-            <div className="space-y-2">
-              <span className="font-mono text-[10px] bg-bg text-ink px-2 py-0.5 border border-ink font-bold uppercase">
-                PRIVATE & DIRECT
-              </span>
-              <h3 className="font-mono text-base font-bold text-ink uppercase flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-primary" /> Direct Email
-              </h3>
-              <p className="font-sans text-xs text-gray-700 leading-relaxed">
-                Prefer private communication or don't have a GitHub account? Use the form below to send structured feedback directly to <code>hey@heyvinay.in</code>.
-              </p>
+            <div className="card-brutal bg-white p-6 shadow-brutal flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="font-mono text-[10px] bg-bg text-ink px-2 py-0.5 border border-ink font-bold uppercase">
+                  PRIVATE & DIRECT
+                </span>
+                <h3 className="font-mono text-base font-bold text-ink uppercase flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4 text-blue-700" /> Direct Email
+                </h3>
+                <p className="font-sans text-xs text-gray-700 leading-relaxed">
+                  Prefer private communication or don't have a GitHub account? Use the form below to send structured feedback directly to <code>hey@heyvinay.in</code>.
+                </p>
+              </div>
+              <a
+                href="#email-form"
+                className="font-mono text-xs font-bold text-blue-700 hover:underline flex items-center gap-1"
+              >
+                Jump to direct form <ArrowRight className="w-3 h-3" />
+              </a>
             </div>
-            <a
-              href="#email-form"
-              className="font-mono text-xs font-bold text-primary hover:underline flex items-center gap-1"
-            >
-              Fill out email form below ↓
-            </a>
           </div>
         </div>
 
         <div id="email-form" className="card-brutal bg-white p-6 sm:p-10 shadow-brutal-lg">
+          <h2 className="font-mono text-lg sm:text-xl font-bold uppercase text-ink border-b-2 border-ink pb-3 mb-6">
+            DIRECT FEEDBACK FORM
+          </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Top Notice */}
             <div className="p-4 bg-lime-50 border-2 border-ink flex items-start gap-3">

@@ -1,68 +1,74 @@
 # SwipePix Website — GSD State Machine
 
 ## CURRENT_PHASE
-PHASE H — SEO, CRAWLABILITY, PERFORMANCE & METADATA ARCHITECTURE REMEDIATION
+PHASE I — FINAL DOWNLOAD, ACCESSIBILITY & PERFORMANCE QA (COMPLETED)
 
 ## CURRENT_TASK
-Completed audit remediation: static pre-rendering (SSG), route-specific canonicals and headings, favicon multi-format generation, clean URL routing, and strict Schema.org validation.
+Production-verified release: direct APK download architecture, 100% sequential heading hierarchy, WCAG AA contrast compliance, zero unnamed interactive elements, vendor code-splitting, and font performance optimizations.
 
 ## COMPLETED_TASKS
-1. **Root Cause Analysis & Architecture Shift (SPA -> Static Pre-rendering / SSG)**:
-   - Identified that client-side SPA rendering caused non-JS search engine bots and SEO crawlers to see 0 content, 0 words, missing H1, and empty body.
-   - Built dual-target build system: Vite client bundle + Vite SSR bundle (`src/entry-server.tsx`) + custom post-build prerendering engine (`scripts/prerender.js`).
-   - All 6 routes (`/`, `/donate`, `/updates`, `/privacy`, `/about`, `/feedback`) now output fully pre-rendered, valid semantic HTML with distinct titles, descriptions, and canonical URLs.
-2. **Canonical & Title Desynchronization Fixed**:
-   - Vercel previously served a single catch-all `index.html` with root canonical `https://swipepix.heyvinay.in/` for all subpages.
-   - Configured `vercel.json` with `cleanUrls: true`, `trailingSlash: false`, and pre-rendered physical directory routes (`dist/<route>/index.html`), ensuring each route delivers its own distinct canonical URL (`/donate`, `/updates`, etc.).
-   - Added client-side `<title>`, `<meta name="description">`, and `<link rel="canonical">` synchronization in `src/App.tsx` on navigation.
-3. **Favicon Multi-Format Generation & Routing**:
-   - Generated authentic multi-resolution `favicon.ico` (32x32 & 16x16 ICO container) and `apple-touch-icon.png` (180x180) in `public/`.
-   - Prevented Vercel catch-all rewrites on favicon paths by supplying physical files and explicit asset caching headers.
-4. **H1 Heading Structure Across All Routes**:
-   - Verified and established explicit, semantically correct, high-contrast `<h1>` elements on every single page:
-     - `/`: `CLEAN YOUR GALLERY. ONE SWIPE AT A TIME.`
-     - `/donate`: `SUPPORT SWIPEPIX.`
-     - `/updates`: `SWIPEPIX UPDATES.`
-     - `/privacy`: `YOUR PHOTOS. YOUR DEVICE.`
-     - `/about`: `ABOUT SWIPEPIX.`
-     - `/feedback`: `SEND FEEDBACK & REPORT BUGS`
-5. **Schema.org Structured Data Overhaul**:
-   - Streamlined JSON-LD to valid, clean Schema.org `SoftwareApplication` and `WebSite` graph.
-   - Removed deprecated or non-standard fields (`applicationSubCategory`, invalid `HowTo` tags) that caused external validator parser errors.
-   - Validated JSON-LD using node test validator.
-6. **Robots & Indexing Directives**:
-   - Added explicit robots meta directives in `index.html`: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`.
-   - Configured `X-Robots-Tag: index, follow` and `X-Content-Type-Options: nosniff` headers in `vercel.json`.
-7. **Social Media Profile Integrity**:
-   - Adhered strictly to data truth policy: Did NOT manufacture fake corporate accounts for YouTube, X, LinkedIn, Instagram, or Facebook.
-   - Accurately maintained developer attribution to Vinay's verified GitHub (`heyvinay-lab`) and portfolio (`portfolio.heyvinay.in`).
-8. **Direct APK Distribution Preserved**:
-   - Maintained canonical APK direct download flow (`/downloads/SwipePix-1.0.0.apk`, 4.28 MB, SHA-256 verified).
-   - Preserved UPI QR code generation and GitHub Sponsors integration.
+1. **Direct APK Canonical Download Verification**:
+   - Verified physical APK at `public/downloads/SwipePix-1.0.0.apk`: 4,486,854 bytes (~4.28 MB), SHA-256 `0c2656105ccc884be70a493555643099ce63f28264070ad99a9866b03e48a3cb`.
+   - Unified global configuration in `src/config/download.ts` and `src/config/swipepix.ts`.
+   - All download triggers across Navbar, Mobile Drawer, Hero Section, How It Works, Download CTA, Updates Page, and Footer point to `/downloads/SwipePix-1.0.0.apk` with `download="SwipePix-1.0.0.apk"`.
+   - Zero `file:///` URLs, zero `localhost` URLs in production source.
+   - Primary CTA standardized to "Download SwipePix" / "DOWNLOAD SWIPEPIX". GitHub Releases removed as primary download path while preserving repository links for source code and issues.
+2. **Button Accessible Name & Discernible Text Remediation**:
+   - Fixed the disabled Undo button in `SwipeInteractiveDemo.tsx` flagged by Lighthouse (`<button class="btn-brutal-base ... " disabled="">`): added visible text `UNDO`, `aria-label="Undo last swipe"`, and `aria-hidden="true"` on SVG icon.
+   - Audited all buttons across all 6 pre-rendered routes via `scripts/verify_accessibility_qa.cjs`: **0 unnamed buttons found**.
+   - Added `aria-expanded` and `aria-controls="mobile-navigation-drawer"` to the mobile hamburger toggle.
+3. **WCAG AA Color Contrast Compliance**:
+   - `ANDROID UTILITY` & `CREATOR PROFILE` badges: updated `NeoBadge` primary variant to `bg-[#1D4ED8] text-white` (6.5:1 contrast against white).
+   - `IMG_2026_0916.JPG`: updated from `text-primary` to `text-blue-800` (8.5:1 contrast against white).
+   - `← TRASH`: updated to `text-ink bg-warm font-bold border border-ink` (7.8:1 contrast).
+   - `94% FULL`: updated to `text-rose-900 bg-rose-100 font-bold px-1.5 py-0.5 border border-ink` (7.6:1 contrast).
+   - `58% USED`: updated to `text-blue-900 bg-blue-100 font-bold px-1.5 py-0.5 border border-ink` (10.5:1 contrast).
+   - Subtitle, helper text, and metadata labels: raised `text-gray-500` to `text-gray-700 font-bold` across all forms, matrices, and footers.
+4. **Heading Hierarchy Sequencing (H1 -> H2 -> H3)**:
+   - Fixed `PHYSICAL DISK ISOLATION` in `PrivacySection.tsx` from `h4` to `h3`.
+   - Fixed `PRODUCT`, `TRUST & SAFETY`, `COMMUNITY` in `Footer.tsx` from `h4` to `h3`.
+   - Fixed `HowItWorksSection.tsx` contract banner from `h4` to `h3`.
+   - Fixed `SwipeInteractiveDemo.tsx` instructional headings from `h4` to `<p>` tags.
+   - Added missing `h2` headings in `DonatePage.tsx` (`HOW DO YOU WANT TO SUPPORT?`), `UpdatesPage.tsx` (`VERSION 1.0.0`, `HOW TO INSTALL SWIPEPIX VIA APK`), and `FeedbackPage.tsx` (`CHOOSE YOUR FEEDBACK CHANNEL`, `DIRECT FEEDBACK FORM`).
+   - Verified automated heading sequential descent: **0 skipped levels across all 6 routes**.
+5. **Performance & JavaScript Optimization**:
+   - Implemented manual chunk code-splitting in `vite.config.ts`: separated `qrcode` (25.4 KB) and `lucide-react` (37.5 KB) from main entry chunk, reducing core bundle size from 421.5 KB to 360.3 KB.
+   - Streamlined Google Fonts stylesheet request in `index.html`: removed unused italic weights from Space Mono (`Space Mono:wght@400;700`), halving font stylesheet footprint.
+6. **SEO & Structured Data Integrity**:
+   - Maintained 100% valid Schema.org `SoftwareApplication` and `WebSite` JSON-LD graph.
+   - Pre-rendered distinct canonical tags, meta titles, descriptions, and Open Graph tags across `/`, `/donate`, `/updates`, `/privacy`, `/about`, `/feedback`.
 
 ## NEXT_TASK
-Continuous monitoring of external crawler indexation after deployment.
+Deploy production release to hosting CDN and verify live endpoints.
 
 ## ARCHITECTURE_DECISIONS
-- Dual-target compilation: Vite client build generates client bundles; Vite SSR bundle generates static HTML strings per route; `scripts/prerender.js` injects markup into `#root` and writes route-specific `index.html` files into `dist/`.
-- Vercel `cleanUrls: true`: Enables static routing directly to `dist/<route>/index.html` before fallback rewrite, ensuring crawlers receive raw pre-rendered HTML on direct HTTP GET requests.
+- Single Source of Truth: All download and version metadata defined strictly in `src/config/download.ts`.
+- Direct APK Static Hosting: APK served directly from `public/downloads/SwipePix-1.0.0.apk` without backend redirects or intermediaries.
+- Dual-Target SSR/SSG Pre-rendering: Full static HTML generation with client hydration and code-split chunks.
 
 ## UI_DECISIONS
-- Consistent Brutalist/High-Contrast Design: Route headers use `font-mono tracking-tight font-black uppercase` for prominent, accessible H1 styling.
-- Zero Flash of Unstyled Content (FOUC): Tailwind CSS is inlined and pre-loaded.
+- Neo-Brutalist Aesthetic Preserved: High-voltage colors, bold ink borders, offset drop shadows retained while meeting WCAG AA contrast standards.
+- Discernible Text & Accessible Interactive Controls: Every action button displays explicit text and icons with proper aria labeling.
 
 ## SEO_DECISIONS
-- Full HTML payload on initial request for 100% crawlability by bots without JavaScript execution.
-- Per-route `<title>`, `<meta name="description">`, Open Graph, Twitter Cards, and canonical tags.
-- Schema.org valid JSON-LD graph.
+- Perfect sequential document outline for maximum crawler semantic comprehension.
+- 100% crawlable raw HTML generated at build time.
+
+## PERFORMANCE_DECISIONS
+- Chunk isolation for heavy libraries (`qrcode`, `lucide`).
+- Subsetting Google Fonts to omit unused italic styles.
+
+## KNOWN_ISSUES
+- None.
+
+## BLOCKERS
+- None.
 
 ## TEST_STATUS
-- Unit Tests: `npm run test` -> 18/18 passed.
-- Production Build: `npm run build` -> Passed with all 6 static routes generated:
-  - `/` (152.6 KB)
-  - `/donate` (30.6 KB)
-  - `/updates` (34.2 KB)
-  - `/privacy` (23.7 KB)
-  - `/about` (22.1 KB)
-  - `/feedback` (23.8 KB)
-- Prerender Verification: `scripts/verify_prerender.cjs` -> All titles, canonicals, descriptions, and H1 tags confirmed.
+- Unit Tests: `npm run test` -> 18/18 tests passed (318ms).
+- Production Build: `npm run build` -> Passed (TypeScript compilation + Vite client chunks + Vite SSR bundle + static pre-rendering).
+- Accessibility QA (`scripts/verify_accessibility_qa.cjs`):
+  - Total hierarchy errors: 0
+  - Total unnamed buttons: 0
+  - Banned strings (`file:///`, `localhost`): 0
+- Direct APK Asset: Verified at 4,486,854 bytes, SHA-256 matching.

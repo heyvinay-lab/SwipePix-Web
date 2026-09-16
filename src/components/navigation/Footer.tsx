@@ -50,9 +50,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Col 2: Product */}
           <div>
-            <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-accent mb-4 border-b border-gray-700 pb-1">
+            <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-accent mb-4 border-b border-gray-700 pb-1">
               PRODUCT
-            </h4>
+            </h3>
             <ul className="space-y-2.5 font-mono text-xs">
               <li>
                 <a
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   aria-label="View SwipePix source code on GitHub"
                   className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1"
                 >
-                  Source Code (GitHub) <ExternalLink className="w-3 h-3 text-gray-500" />
+                  Source Code (GitHub) <ExternalLink className="w-3 h-3 text-gray-400" />
                 </a>
               </li>
               <li>
@@ -100,9 +100,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Col 3: Trust & Safety */}
           <div>
-            <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-warm mb-4 border-b border-gray-700 pb-1">
+            <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-warm mb-4 border-b border-gray-700 pb-1">
               TRUST & SAFETY
-            </h4>
+            </h3>
             <ul className="space-y-2.5 font-mono text-xs">
               <li>
                 <a href="/privacy" onClick={(e) => handleNav(e, '/privacy')} className="text-gray-300 hover:text-white transition-colors">
@@ -129,9 +129,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Col 4: Project & Community */}
           <div>
-            <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-primary-light mb-4 border-b border-gray-700 pb-1">
+            <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-primary-light mb-4 border-b border-gray-700 pb-1">
               COMMUNITY
-            </h4>
+            </h3>
             <ul className="space-y-2.5 font-mono text-xs">
               <li>
                 <a href="/feedback" onClick={(e) => handleNav(e, '/feedback')} className="text-gray-300 hover:text-white transition-colors">
@@ -140,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <a href="https://github.com/heyvinay-lab/SwipePix/issues" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
-                  GitHub Issues <ExternalLink className="w-3 h-3 text-gray-500" />
+                  GitHub Issues <ExternalLink className="w-3 h-3 text-gray-400" />
                 </a>
               </li>
               <li>
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <a href="https://github.com/sponsors/heyvinay-lab" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
-                  GitHub Sponsors <ExternalLink className="w-3 h-3 text-gray-500" />
+                  GitHub Sponsors <ExternalLink className="w-3 h-3 text-gray-400" />
                 </a>
               </li>
               <li>

@@ -17,8 +17,8 @@ export const StorageMeterSvg: React.FC<{ className?: string }> = ({ className = 
         {/* Before: Cluttered */}
         <div>
           <div className="flex justify-between mb-1 font-bold">
-            <span className="text-gray-600">BEFORE SWIPEPIX:</span>
-            <span className="text-warm">94% FULL (120.3 GB / 128 GB)</span>
+            <span className="text-ink">BEFORE SWIPEPIX:</span>
+            <span className="text-rose-900 bg-rose-100 font-bold px-1.5 py-0.5 border border-ink">94% FULL (120.3 GB / 128 GB)</span>
           </div>
           <div className="h-6 bg-gray-200 border-2 border-ink flex overflow-hidden p-0.5">
             <div className="h-full bg-warm border-r-2 border-ink" style={{ width: '60%' }} title="Photos & Screenshots" />
@@ -26,7 +26,7 @@ export const StorageMeterSvg: React.FC<{ className?: string }> = ({ className = 
             <div className="h-full bg-primary border-r-2 border-ink" style={{ width: '9%' }} title="Apps" />
             <div className="h-full bg-gray-300" style={{ width: '6%' }} title="Free Space" />
           </div>
-          <div className="flex gap-3 text-[10px] mt-1 text-gray-600">
+          <div className="flex gap-3 text-[10px] mt-1 text-gray-800 font-bold">
             <span className="flex items-center gap-1"><span className="w-2 h-2 bg-warm border border-ink inline-block" /> 72 GB Photos & Memes</span>
             <span className="flex items-center gap-1"><span className="w-2 h-2 bg-secondary border border-ink inline-block" /> 30 GB Videos</span>
           </div>
@@ -35,8 +35,8 @@ export const StorageMeterSvg: React.FC<{ className?: string }> = ({ className = 
         {/* After: Decluttered */}
         <div className="pt-2 border-t border-dashed border-gray-400">
           <div className="flex justify-between mb-1 font-bold">
-            <span className="text-gray-900">AFTER 10-MIN TRIAGE:</span>
-            <span className="text-primary font-bold">58% USED (74.8 GB / 128 GB)</span>
+            <span className="text-ink">AFTER 10-MIN TRIAGE:</span>
+            <span className="text-blue-900 bg-blue-100 font-bold px-1.5 py-0.5 border border-ink">58% USED (74.8 GB / 128 GB)</span>
           </div>
           <div className="h-6 bg-gray-200 border-2 border-ink flex overflow-hidden p-0.5">
             <div className="h-full bg-primary border-r-2 border-ink" style={{ width: '25%' }} title="Curated Photos" />

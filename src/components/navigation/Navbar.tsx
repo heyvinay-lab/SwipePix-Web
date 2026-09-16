@@ -151,14 +151,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden p-2 border-2 border-ink bg-white shadow-brutal-sm text-ink focus:outline-none"
           aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation-drawer"
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
       </div>
 
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t-3 border-ink bg-white p-4 shadow-brutal-lg animate-in slide-in-from-top-2">
+        <div id="mobile-navigation-drawer" className="lg:hidden border-t-3 border-ink bg-white p-4 shadow-brutal-lg animate-in slide-in-from-top-2">
           <div className="flex flex-col gap-3 font-mono font-bold text-sm uppercase">
             {/* Top Priority Mobile Action CTAs */}
             <div className="flex flex-col gap-2 pb-3 border-b-2 border-dashed border-gray-300">
@@ -209,7 +211,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
 
             {/* Navigation Links */}
             <div className="flex flex-col gap-1.5">
-              <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider font-bold mb-1">
+              <span className="text-[10px] font-mono text-gray-700 uppercase tracking-wider font-bold mb-1">
                 Navigation
               </span>
               {navLinks.map((link) => (

@@ -52,9 +52,9 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b-2 border-ink pb-6 mb-6">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="font-mono text-2xl font-bold text-ink">
+                <h2 className="font-mono text-2xl font-bold text-ink">
                   VERSION {SWIPEPIX_CONFIG.currentVersion}
-                </span>
+                </h2>
                 <NeoBadge variant="accent" rotate="-1">
                   RELEASE CHANNEL: PRODUCTION
                 </NeoBadge>
@@ -130,32 +130,32 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
           {/* Build Information Matrix */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8 font-mono text-xs">
             <div className="p-3 border-2 border-ink bg-bg">
-              <span className="text-[10px] text-gray-500 uppercase block">PACKAGE ID</span>
+              <span className="text-[10px] text-gray-700 font-bold uppercase block">PACKAGE ID</span>
               <span className="font-bold text-ink truncate block">in.heyvinay.swipepix</span>
             </div>
             <div className="p-3 border-2 border-ink bg-bg">
-              <span className="text-[10px] text-gray-500 uppercase block">MINIMUM SDK</span>
+              <span className="text-[10px] text-gray-700 font-bold uppercase block">MINIMUM SDK</span>
               <span className="font-bold text-ink block">API 33 (Android 13)</span>
             </div>
             <div className="p-3 border-2 border-ink bg-bg">
-              <span className="text-[10px] text-gray-500 uppercase block">TARGET SDK</span>
+              <span className="text-[10px] text-gray-700 font-bold uppercase block">TARGET SDK</span>
               <span className="font-bold text-ink block">API 35 (Android 15)</span>
             </div>
             <div className="p-3 border-2 border-ink bg-bg">
-              <span className="text-[10px] text-gray-500 uppercase block">NETWORK PERMISSION</span>
-              <span className="font-bold text-warm block">NONE (0% Network)</span>
+              <span className="text-[10px] text-gray-700 font-bold uppercase block">NETWORK PERMISSION</span>
+              <span className="font-bold text-emerald-900 bg-emerald-100 px-1 border border-ink inline-block mt-0.5">NONE (0% Network)</span>
             </div>
           </div>
 
           {/* Release Notes List */}
           <div className="space-y-4">
             <h3 className="font-mono text-base font-bold uppercase text-ink flex items-center gap-2 border-b-2 border-ink pb-2">
-              <Terminal className="w-4 h-4 text-primary" /> CHANGELOG / RELEASE NOTES
+              <Terminal className="w-4 h-4 text-blue-700" /> CHANGELOG / RELEASE NOTES
             </h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans text-xs">
               {releaseNotes.map((note, i) => (
                 <li key={i} className="flex items-start gap-2 p-2.5 bg-gray-50 border border-gray-200 rounded">
-                  <CheckCircle className="w-4 h-4 text-accent-hover shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                   <span className="text-gray-800">{note}</span>
                 </li>
               ))}
@@ -170,9 +170,9 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
               <span className="font-mono text-[10px] bg-amber-100 text-ink px-2 py-0.5 border border-ink font-bold uppercase">
                 QUALITY ASSURANCE
               </span>
-              <h4 className="font-mono text-base font-bold text-ink uppercase">
+              <h3 className="font-mono text-base font-bold text-ink uppercase">
                 Found something wrong with this release?
-              </h4>
+              </h3>
               <p className="font-sans text-xs text-gray-700 leading-relaxed">
                 Help us squash it. Report any regression, crash, or unexpected behavior on Android 13-15.
               </p>
@@ -190,7 +190,7 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
               }}
               className="text-xs font-bold w-full sm:w-auto"
             >
-              <Bug className="w-3.5 h-3.5 mr-1.5 text-warm" />
+              <Bug className="w-3.5 h-3.5 mr-1.5 text-rose-600" />
               Report a Bug
             </BrutalistButton>
           </div>
@@ -200,9 +200,9 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
               <span className="font-mono text-[10px] bg-white text-ink px-2 py-0.5 border border-ink font-bold uppercase">
                 VOLUNTARY PATRONAGE
               </span>
-              <h4 className="font-mono text-base font-bold text-ink uppercase">
+              <h3 className="font-mono text-base font-bold text-ink uppercase">
                 Support Independent Maintenance
-              </h4>
+              </h3>
               <p className="font-sans text-xs text-gray-800 leading-relaxed">
                 SwipePix is completely free with zero ads. Help support test devices and continued improvements.
               </p>
@@ -228,9 +228,9 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onNavigate }) => {
 
         {/* Installation & Sideloading FAQ Card */}
         <BrutalistCard bgColor="bg-white">
-          <h3 className="font-mono text-base font-bold uppercase text-ink mb-3 flex items-center gap-2">
+          <h2 className="font-mono text-base sm:text-lg font-bold uppercase text-ink mb-3 flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-accent-hover" /> HOW TO INSTALL SWIPEPIX VIA APK
-          </h3>
+          </h2>
           <ol className="list-decimal list-inside font-sans text-xs text-gray-700 space-y-2 leading-relaxed">
             <li>Download the official <code>SwipePix-1.0.0.apk</code> from the direct download button above.</li>
             <li>When prompted by your browser, tap <em>"Download anyway"</em>.</li>
